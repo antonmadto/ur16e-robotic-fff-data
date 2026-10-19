@@ -1,0 +1,128 @@
+{
+  "name": "demoS",
+  "status": "preview_ok",
+  "error": null,
+  "created_utc": "2026-06-18T06:22:44.246073+00:00",
+  "finished_utc": "2026-06-18T06:23:04.147100+00:00",
+  "phase": 0,
+  "preview_only": true,
+  "inputs": {
+    "stl": "models/S_25mm.stl",
+    "ref": "models/S_25mm.csv",
+    "layer_mm": 2.0,
+    "line_width_mm": 0.6,
+    "layer_height_mm": 0.4,
+    "speed_mm_s": 5.0,
+    "urdf": "/root/isaac_ws/ur5e_current.urdf",
+    "seed": "/root/isaac_ws/ur5e_current_joint_state.json",
+    "ik_waypoints": 900,
+    "visual_points": 6000,
+    "no_sim": false,
+    "auto_execute": false
+  },
+  "gates": [
+    {
+      "name": "G1",
+      "passed": true,
+      "hard": true,
+      "detail": "num_slices=50, num_points=2040"
+    },
+    {
+      "name": "G3",
+      "passed": true,
+      "hard": false,
+      "detail": "failed_count=0, max_error_m=0.000006, max_axis_error_deg=0.004"
+    },
+    {
+      "name": "G_TCP",
+      "passed": true,
+      "hard": true,
+      "detail": "pose=[-0.01578, 0.05966, 0.055365, -1.570796, 0.0, 0.0]; max_pos_err=0.00e+00 m, max_axis_err=2.54e-16"
+    },
+    {
+      "name": "G5",
+      "passed": true,
+      "hard": false,
+      "detail": "preview staged (manual operator gate on Windows; not run here)"
+    }
+  ],
+  "stages": {
+    "S1_slice": {
+      "gcode_path": "jobs/demoS/demoS.gcode",
+      "report_path": "jobs/demoS/demoS_comparison_criteria.txt",
+      "num_slices": 50,
+      "num_points": 2040,
+      "elapsed_s": 15.036160945892334
+    },
+    "S2_placement": {
+      "skipped": true,
+      "phase": 1
+    },
+    "S3_iksim": {
+      "sim_json": "/root/isaac_ws/jobs/demoS/demoS_gcode_sim.json",
+      "failed_count": 0,
+      "max_error_m": 5.741352367945787e-06,
+      "max_axis_error_deg": 0.004210954956082936,
+      "num_ik_waypoints": 900,
+      "elapsed_s": 3.8650970458984375
+    },
+    "TCP_inject": {
+      "tcp_pose": [
+        -0.01578,
+        0.05966,
+        0.055365000000000004,
+        -1.5707963267948963,
+        0.0,
+        0.0
+      ],
+      "offset_m": [
+        -0.01578,
+        0.05966,
+        0.055365000000000004
+      ],
+      "nozzle_axis_local": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "roundtrip": {
+        "sampled_indices": [
+          0,
+          179,
+          359,
+          539,
+          719,
+          899
+        ],
+        "max_pos_err_m": 0.0,
+        "max_axis_err": 2.5438405243138006e-16,
+        "pos_tol_m": 0.0001,
+        "axis_tol": 0.0001,
+        "checked_axis": true
+      },
+      "sim_json": "/root/isaac_ws/jobs/demoS/demoS_gcode_sim.json",
+      "elapsed_s": 0.08462047576904297
+    },
+    "S4_collision": {
+      "skipped": true,
+      "phase": 2
+    },
+    "S5_sim": {
+      "skipped": false,
+      "isaac_shared_path": "/mnt/c/isaacsim/ur5e_gcode_sim.json",
+      "isaac_shared_written": true,
+      "isaac_shared_note": "",
+      "isaac_win_sim_path": "C:/isaacsim/ur5e_gcode_sim.json",
+      "launch_command": [
+        "set UR5E_GCODE_SIM_PATH=C:/isaacsim/ur5e_gcode_sim.json",
+        "powershell.exe -Command \"& 'C:/isaacsim/python.bat' 'C:/isaacsim/open_ur5e_gcode_sim_in_isaac.py'\""
+      ],
+      "entry_local": "/root/isaac_ws/tools/open_ur5e_gcode_sim_in_isaac.py"
+    }
+  },
+  "skipped_stages": {
+    "S2_placement_search": "Phase 1 (kinematic-aware slicing)",
+    "S4_collision": "Phase 1/2 (time-indexed swept-bead world)",
+    "S6_S10_execution": "Phase 1 (no hardware in Phase 0)"
+  }
+}

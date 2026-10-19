@@ -1,0 +1,37 @@
+<mujoco model="ur16e_live">
+  <compiler meshdir="meshes" texturedir="meshes" angle="radian" autolimits="true"/>
+  <option gravity="0 0 0" integrator="implicitfast"/>
+  <visual>
+    <global offwidth="1600" offheight="1200" azimuth="140" elevation="-20"/>
+    <quality shadowsize="4096" numslices="28"/>
+    <headlight diffuse="0.55 0.55 0.55" ambient="0.45 0.45 0.45" specular="0.2 0.2 0.2"/>
+    <map fogstart="3" fogend="8"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.55 0.62 0.72" rgb2="0.12 0.14 0.18" width="256" height="256"/>
+    <texture name="grid" type="2d" builtin="checker" rgb1="0.20 0.22 0.25" rgb2="0.26 0.28 0.31" width="512" height="512"/>
+    <material name="grid" texture="grid" texrepeat="10 10" reflectance="0.15"/>
+    <material name="urmetal" rgba="0.86 0.88 0.90 1" specular="0.5" shininess="0.4" reflectance="0.08"/>
+    <material name="nozzle"  rgba="0.20 0.20 0.22 1" specular="0.7" shininess="0.6"/>
+    <material name="bed"     rgba="0.10 0.35 0.55 0.92" specular="0.6" shininess="0.5" reflectance="0.25"/>
+    <material name="bed_pcb"   rgba="0.42 0.13 0.07 1" specular="0.25" shininess="0.25" reflectance="0.04"/>
+    <material name="bed_steel" rgba="0.16 0.17 0.19 1" specular="0.30" shininess="0.40" reflectance="0.22"/>
+    <material name="bed_area"  rgba="1.00 0.62 0.15 0.45" specular="0.2" shininess="0.2"/>
+    <material name="tableframe" rgba="0.16 0.17 0.20 1" specular="0.35" shininess="0.3"/>
+    <material name="tablecore"  rgba="0.34 0.36 0.39 1" specular="0.30" shininess="0.3" reflectance="0.05"/>
+    <texture name="breadboard" type="2d" file="breadboard_holes.png"/><material name="breadboard" texture="breadboard" texuniform="true" texrepeat="40.0000 40.0000" rgba="1 1 1 1" specular="0.35" shininess="0.35" reflectance="0.06"/>
+    <mesh name="base" file="base.obj"/><mesh name="shoulder" file="shoulder.obj"/><mesh name="upperarm" file="upperarm.obj"/><mesh name="forearm" file="forearm.obj"/><mesh name="wrist1" file="wrist1.obj"/><mesh name="wrist2" file="wrist2.obj"/><mesh name="wrist3" file="wrist3.obj"/><mesh name="mk3shead" file="mk3s_cad_tool0.obj"/>
+  </asset>
+  <worldbody>
+    <light name="key" pos="1.2 -1.0 2.6" dir="-0.4 0.35 -1" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3"/>
+    <light name="fill" pos="-1.4 -0.6 1.8" dir="0.5 0.3 -1" diffuse="0.35 0.35 0.4"/>
+    <geom name="floor" type="plane" pos="0 0 -0.88" size="3 3 0.05" material="grid"/>
+    <geom name="pedestal" type="cylinder" size="0.095 0.006" pos="0 0 0.006" rgba="0.22 0.23 0.26 1"/>
+    <geom type="mesh" mesh="base" pos="0 0 0" quat="0.000001 0.000000 0.000000 1.000000" material="urmetal"/>
+    <body name="base_link" pos="0 0 0">
+      <body name="shoulder_pan" pos="0.000000 0.000000 0.180930" quat="1.000000 0.000000 0.000000 0.000000"><joint name="shoulder_pan" type="hinge" axis="0 0 1" range="-6.2832 6.2832"/><geom type="mesh" mesh="shoulder" pos="0.000000 0.000000 0.000000" quat="0.000001 0.000000 0.000000 1.000000" material="urmetal"/><body name="shoulder_lift" pos="0.000170 0.000000 0.000000" quat="0.707356 0.706857 0.000000 0.000000"><joint name="shoulder_lift" type="hinge" axis="0 0 1" range="-6.2832 6.2832"/><geom type="mesh" mesh="upperarm" pos="0.000000 0.000000 0.176000" quat="0.499998 0.500000 -0.500002 -0.500000" material="urmetal"/><body name="elbow" pos="-0.478520 0.000000 0.000000" quat="1.000000 -0.000611 0.000571 -0.000001"><joint name="elbow" type="hinge" axis="0 0 1" range="-6.2832 6.2832"/><geom type="mesh" mesh="forearm" pos="0.000000 0.000000 0.040000" quat="0.499998 0.500000 -0.500002 -0.500000" material="urmetal"/><body name="wrist_1" pos="-0.360110 -0.000750 0.174920" quat="0.999998 0.002135 0.000140 -0.000000"><joint name="wrist_1" type="hinge" axis="0 0 1" range="-6.2832 6.2832"/><geom type="mesh" mesh="wrist1" pos="0.000000 0.000000 -0.135000" quat="0.707105 0.707108 0.000000 0.000000" material="urmetal"/><body name="wrist_2" pos="0.000100 -0.119960 0.000010" quat="0.707141 0.707073 0.000000 0.000000"><joint name="wrist_2" type="hinge" axis="0 0 1" range="-6.2832 6.2832"/><geom type="mesh" mesh="wrist2" pos="0.000000 0.000000 -0.120000" quat="1.000000 0.000000 0.000000 0.000000" material="urmetal"/><body name="wrist_3" pos="0.000050 0.115640 0.000130" quat="0.707497 -0.706716 0.000002 -0.000000"><joint name="wrist_3" type="hinge" axis="0 0 1" range="-6.2832 6.2832"/><geom type="mesh" mesh="wrist3" pos="0.000000 0.000000 -0.116800" quat="0.707105 0.707108 0.000000 0.000000" material="urmetal"/><body name="flange" quat="0.499998 -0.500002 -0.500000 -0.500000"><body name="tool0" quat="0.499998 0.500000 0.500002 0.500000"><site name="tool0" size="0.008" rgba="0.1 1 0.2 1"/><geom type="mesh" mesh="mk3shead" material="nozzle"/><site name="nozzle_tip" pos="-0.001000 0.046983 0.054001" size="0.006" rgba="1 0.15 0.15 1"/></body></body></body></body></body></body></body></body>
+    </body>
+    <body name="table" pos="0.400000 0.300000 -0.050000" quat="0.000000 0.000000 0.000000 1.000000"><geom name="table_top" type="box" pos="0 0 0.027000" size="0.60000 0.45000 0.003000" material="breadboard"/><geom name="table_core" type="box" pos="0 0 -0.003000" size="0.60000 0.45000 0.027000" material="tablecore"/><geom name="table_leg0" type="box" pos="0.56000 0.41000 -0.43000" size="0.02000 0.02000 0.40000" material="tableframe"/><geom name="table_leg1" type="box" pos="0.56000 -0.41000 -0.43000" size="0.02000 0.02000 0.40000" material="tableframe"/><geom name="table_leg2" type="box" pos="-0.56000 -0.41000 -0.43000" size="0.02000 0.02000 0.40000" material="tableframe"/><geom name="table_leg3" type="box" pos="-0.56000 0.41000 -0.43000" size="0.02000 0.02000 0.40000" material="tableframe"/><geom name="table_rail" type="box" pos="0 0 -0.63000" size="0.56000 0.41000 0.04800" material="tableframe"/></body>
+    <body name="print_bed" pos="0.567000 0.350800 0.053200" quat="0.000002 0.001186 -0.001499 -0.999998"><geom name="bed_pcb" type="box" pos="0 0 -0.001300" size="0.12700 0.10700 0.000800" material="bed_pcb"/><geom name="bed_sheet" type="box" pos="0 0 -0.000250" size="0.12600 0.12050 0.000250" material="bed_steel"/><geom name="bed_area0" type="box" pos="0.00000 0.10500 0.00020" size="0.12500 0.00150 0.00010" material="bed_area"/><geom name="bed_area1" type="box" pos="0.00000 -0.10500 0.00020" size="0.12500 0.00150 0.00010" material="bed_area"/><geom name="bed_area2" type="box" pos="0.12500 0.00000 0.00020" size="0.00150 0.10500 0.00010" material="bed_area"/><geom name="bed_area3" type="box" pos="-0.12500 0.00000 0.00020" size="0.00150 0.10500 0.00010" material="bed_area"/><site name="printarea0" pos="0.12500 0.10500 0.0004" size="0.004" rgba="1 0.55 0.1 1"/><site name="printarea1" pos="0.12500 -0.10500 0.0004" size="0.004" rgba="1 0.55 0.1 1"/><site name="printarea2" pos="-0.12500 -0.10500 0.0004" size="0.004" rgba="1 0.55 0.1 1"/><site name="printarea3" pos="-0.12500 0.10500 0.0004" size="0.004" rgba="1 0.55 0.1 1"/><site name="bed_center" pos="0 0 0" size="0.005" rgba="0.2 1 0.4 1"/></body><site name="bedc0" pos="0.692045 0.460830 0.053583" size="0.005" rgba="1 0.85 0.1 0.85"/><site name="bedc1" pos="0.442045 0.460829 0.052990" size="0.005" rgba="1 0.85 0.1 0.85"/><site name="bedc2" pos="0.442045 0.240830 0.053650" size="0.005" rgba="1 0.85 0.1 0.85"/><site name="bedc3" pos="0.692045 0.240831 0.054243" size="0.005" rgba="1 0.85 0.1 0.85"/>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,519 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Robotic FFF plan JSON (inter-stage contract)",
+ "description": "Inferred from C30_plan_v2.json (July 2026 campaign). x-length values are those of that plan and are not constraints. Top-level fields: created_utc, source_gcode, source_urdf, joint_names, purge, gcode, mapping, tcp, ik_path, visual_path, extrusion.",
+ "type": "object",
+ "properties": {
+  "created_utc": {
+   "type": "string"
+  },
+  "source_gcode": {
+   "type": "string"
+  },
+  "source_urdf": {
+   "type": "string"
+  },
+  "joint_names": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "x-length": 6
+  },
+  "purge": {
+   "type": "object",
+   "properties": {
+    "mode": {
+     "type": "string"
+    },
+    "bed_x_mm": {
+     "type": "number"
+    },
+    "line1_bed_x_mm": {
+     "type": "number"
+    },
+    "line2_bed_x_mm": {
+     "type": "number"
+    },
+    "bed_y_center_mm": {
+     "type": "number"
+    },
+    "length_mm": {
+     "type": "number"
+    },
+    "n_points": {
+     "type": "number"
+    },
+    "spacing_mm": {
+     "type": "number"
+    },
+    "first_layer_offset_m": {
+     "type": "number"
+    },
+    "world_min": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "world_max": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    }
+   }
+  },
+  "gcode": {
+   "type": "object",
+   "properties": {
+    "points": {
+     "type": "number"
+    },
+    "max_source_lines": {
+     "type": "null"
+    },
+    "units": {
+     "type": "string"
+    },
+    "bounds_min": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "bounds_max": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "path_length_mm": {
+     "type": "number"
+    },
+    "normal_count": {
+     "type": "number"
+    }
+   }
+  },
+  "mapping": {
+   "type": "object",
+   "properties": {
+    "mode": {
+     "type": "string"
+    },
+    "description": {
+     "type": "string"
+    },
+    "center_x": {
+     "type": "number"
+    },
+    "center_y": {
+     "type": "number"
+    },
+    "base_z": {
+     "type": "number"
+    },
+    "scale": {
+     "type": "number"
+    },
+    "bed": {
+     "type": "object",
+     "properties": {
+      "bed_cal": {
+       "type": "string"
+      },
+      "place": {
+       "type": "string"
+      },
+      "anchor_local_mm": {
+       "type": "array",
+       "items": {
+        "type": "number"
+       },
+       "x-length": 2
+      },
+      "anchor_base_link_m": {
+       "type": "array",
+       "items": {
+        "type": "number"
+       },
+       "x-length": 3
+      },
+      "footprint_mm": {
+       "type": "array",
+       "items": {
+        "type": "number"
+       },
+       "x-length": 2
+      },
+      "bed_size_mm": {
+       "type": "array",
+       "items": {
+        "type": "number"
+       },
+       "x-length": 2
+      },
+      "axes": {
+       "type": "object",
+       "properties": {
+        "x": {
+         "type": "array",
+         "items": {
+          "type": "number"
+         },
+         "x-length": 3
+        },
+        "y": {
+         "type": "array",
+         "items": {
+          "type": "number"
+         },
+         "x-length": 3
+        },
+        "z": {
+         "type": "array",
+         "items": {
+          "type": "number"
+         },
+         "x-length": 3
+        }
+       }
+      }
+     }
+    },
+    "robodk_reference": {
+     "type": "null"
+    },
+    "used_robodk_seed": {
+     "type": "boolean"
+    },
+    "post_mapping_transform": {
+     "type": "object",
+     "properties": {
+      "world_translate_mm": {
+       "type": "array",
+       "items": {
+        "type": "number"
+       },
+       "x-length": 3
+      },
+      "rotate_world_z_deg": {
+       "type": "number"
+      },
+      "rotate_pivot_m": {
+       "type": "null"
+      },
+      "rotate_pivot_index": {
+       "type": "number"
+      },
+      "rotate_target_axes": {
+       "type": "boolean"
+      },
+      "world_translate_after_mm": {
+       "type": "array",
+       "items": {
+        "type": "number"
+       },
+       "x-length": 3
+      },
+      "description": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "tcp": {
+   "type": "object",
+   "properties": {
+    "frame": {
+     "type": "string"
+    },
+    "description": {
+     "type": "string"
+    },
+    "offset_mm": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "offset_m": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "nozzle_axis_local": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "nozzle_axis_description": {
+     "type": "string"
+    },
+    "target_nozzle_axis_world": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 3
+    },
+    "target_axis_mode": {
+     "type": "string"
+    },
+    "target_axis_summary": {
+     "type": "string"
+    },
+    "nozzle_opposes_normal": {
+     "type": "boolean"
+    },
+    "normal_mapping_description": {
+     "type": "string"
+    },
+    "target_nozzle_axis_description": {
+     "type": "string"
+    }
+   }
+  },
+  "visual_path": {
+   "type": "object",
+   "properties": {
+    "indices": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 10737
+    },
+    "points": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    },
+    "target_nozzle_axes_world": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    }
+   }
+  },
+  "ik_path": {
+   "type": "object",
+   "properties": {
+    "indices": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 10737
+    },
+    "targets": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    },
+    "target_description": {
+     "type": "string"
+    },
+    "tool0_origins": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    },
+    "tcp_positions": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    },
+    "nozzle_axes_world": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    },
+    "target_nozzle_axes_world": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 3
+     },
+     "x-length": 10737
+    },
+    "joint_positions": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "x-length": 6
+     },
+     "x-length": 10737
+    },
+    "max_error_m": {
+     "type": "number"
+    },
+    "mean_error_m": {
+     "type": "number"
+    },
+    "max_axis_error_deg": {
+     "type": "number"
+    },
+    "mean_axis_error_deg": {
+     "type": "number"
+    },
+    "failed": {
+     "type": "array"
+    },
+    "failed_count": {
+     "type": "number"
+    }
+   }
+  },
+  "extrusion": {
+   "type": "object",
+   "properties": {
+    "version": {
+     "type": "number"
+    },
+    "params": {
+     "type": "object",
+     "properties": {
+      "line_width_mm": {
+       "type": "number"
+      },
+      "layer_height_mm": {
+       "type": "number"
+      },
+      "filament_diameter_mm": {
+       "type": "number"
+      },
+      "pa_k_s": {
+       "type": "number"
+      },
+      "retract_mm": {
+       "type": "number"
+      },
+      "retract_feed_mm_s": {
+       "type": "number"
+      },
+      "prime_extra_mm": {
+       "type": "number"
+      },
+      "prime_lead_mm": {
+       "type": "number"
+      },
+      "coast_mm3": {
+       "type": "number"
+      },
+      "min_travel_mm": {
+       "type": "number"
+      },
+      "corner_angle_deg": {
+       "type": "number"
+      },
+      "corner_stop_deg": {
+       "type": "number"
+      },
+      "corner_coast": {
+       "type": "boolean"
+      },
+      "e_per_mm": {
+       "type": "number"
+      }
+     }
+    },
+    "state": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 10737
+    },
+    "flow": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 10737
+    },
+    "corner_deg": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "x-length": 10737
+    },
+    "events": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "index": {
+        "type": "number"
+       },
+       "type": {
+        "type": "string"
+       },
+       "mm": {
+        "type": "number"
+       },
+       "feed_mm_s": {
+        "type": "number"
+       }
+      }
+     },
+     "x-length": 3
+    }
+   }
+  }
+ }
+}

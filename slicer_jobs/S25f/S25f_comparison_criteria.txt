@@ -1,0 +1,45 @@
+Comparison Criteria Report
+==========================
+
+Method: Skeleton-based centerline slicing with fitted straight end axes
+STL file: models/S_25mm.stl
+G-code file: S25f.gcode
+Desired/reference path file: models/S_25mm.csv
+
+Input Parameters
+----------------
+Final layer thickness (mm): 0.3000
+Voxel grid resolution: 150
+Smoothing iterations: 12
+Centerline resampled points: 300
+Extension step (mm): 0.341439
+Extension plane radius (mm): 3.414387
+Extension minimum points: 4
+
+Virtual Comparison Criteria
+---------------------------
+Toolpath generation time, excluding export and visualization (s): 11.679165
+G-code/report export time (s): 0.075334
+Visualization time (figures + process video) (s): 2.086558
+Overall script time, generation plus export plus visualization (s): 13.841059
+Generated central path length (mm): 101.557038
+Generated central path points: 300
+Generated toolpath length (mm): 26261.189688
+Generated toolpath points: 88047
+Number of slices/layers: 338
+Number of separate path sections: 336
+Average section length (mm): 78.158303
+Path continuity jump threshold (mm): 0.600000
+Number of jumps larger than threshold: 0
+Maximum jump between consecutive valid points (mm): 0.300000
+Mean orientation change between neighboring slices (deg): 0.422914
+Maximum orientation change between neighboring slices (deg): 1.292863
+Average deviation between generated central path and desired/reference path (mm): 0.767088
+Maximum deviation between generated central path and desired/reference path (mm): 3.143755
+
+Qualitative Notes
+-----------------
+Path continuity: The generated toolpath appears continuous based on the selected jump threshold.
+Orientation stability: Relatively stable.
+Central path comparison basis: Desired/reference path versus generated central path.
+RoboDK feasibility: To be confirmed from import and simulation in RoboDK.
