@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-05-13T07:19:25.855384+00:00",
+  "source_sim_json": "/root/isaac_ws/deploy/method4_25mm_support80_1layer_zup36_RAWnormals_60kpts_sim.json",
+  "output_script": "/root/isaac_ws/deploy/method4_25mm_support80_1layer_zup36_RAWnormals_60kpts_extrude60_t215_retry.script",
+  "publish_topic": "/urscript_interface/script_command",
+  "function_name": "ur5e_sim_run",
+  "waypoints": 60000,
+  "path_length_m": 51.01498091321369,
+  "expected_duration_s": 10204.496182642739,
+  "speed_mps": 0.005,
+  "cartesian_accel_mss": 0.6,
+  "blend_radius_m": 5e-05,
+  "approach_time_s": 1.5,
+  "set_tcp_pose": [
+    -0.015785,
+    0.05966,
+    0.055365,
+    -1.2092,
+    1.2092,
+    1.2092
+  ],
+  "watch": {
+    "status": "reached",
+    "elapsed_s": 10677.255637168884,
+    "final_delta_rad": 0.008723979645710811,
+    "min_delta_rad_seen": 0.008723979645710811,
+    "extrusion_started": true,
+    "extrusion_idle_warnings": 1
+  }
+}
