@@ -1,0 +1,968 @@
+11:07:08 nozzle 63.3 C (waiting for < 120)
+=== starting the 40 mm print (UDP print head) ===
+[orch] PRINT HEAD TRANSPORT: UDP udp://10.89.27.253:9410 (no ssh in the print's critical path). head state=idle mode=serve cmd_proto=1 uptime=1301.4s
+[orch] jetson deploy skipped (udp transport; pass --deploy to force it)
+[orch] extrusion bridge mode: PLAN (PA + events)
+[orch] pre-print bed probe (5-point, force-guarded, <=5N)...
+[orch][probe] [probe] CONTACT (moveUntilContact) z=52.838mm expected=52.69mm delta=+0.15mm Fz=0.94N peak|F|=2.33N (informational threshold 4.0N -- BELOW THRESHOLD, check the touch)
+[orch][probe] [probe] CONTACT (moveUntilContact) z=52.804mm expected=52.67mm delta=+0.14mm Fz=0.56N peak|F|=2.16N (informational threshold 4.0N -- BELOW THRESHOLD, check the touch)
+[orch][probe] [probe] CONTACT (moveUntilContact) z=53.212mm expected=53.06mm delta=+0.15mm Fz=0.51N peak|F|=1.95N (informational threshold 4.0N -- BELOW THRESHOLD, check the touch)
+[orch][probe] [probe] CONTACT (moveUntilContact) z=53.327mm expected=53.08mm delta=+0.25mm Fz=1.26N peak|F|=1.63N (informational threshold 4.0N -- BELOW THRESHOLD, check the touch)
+[orch][probe] [probe] CONTACT (force_limit) z=52.959mm expected=52.87mm delta=+0.08mm Fz=2.81N peak|F|=5.08N (informational threshold 4.0N -- BELOW THRESHOLD, check the touch)
+[orch][probe] [probe] mean delta (measured-old) = +0.154 mm, tilt-vs-old = 32.99 mdeg, flatness_pp_mm = 0.107
+[orch][probe] [probe] RECOMMENDED --world-translate-after-mm 0 0 0.404
+[orch] probe: sheet vs calibration +0.154mm (5-pt mean); probe's 0.25mm-squish recommendation 0.404mm vs plan first-layer translate 0.300mm (design choice, not drift); tolerance ±1.0mm
+[orch] bed OK: plane flat to 0.107mm; surface offset +0.154mm will be APPLIED to the print z.
+[orch] temps log: /home/edge_ur_fdm_cnc/isaac_ws/logs/current_print_temps.log
+[orch] head heating: nozzle->210.0C bed->60.0C  e_per_mm=0.062363
+[jetson] [sync]   T   46.3/210   B  35.2/60 A 33.3
+[jetson] [sync]   T   46.8/210   B  35.2/60 A 33.6
+[jetson] [sync]   T   52.0/210   B  35.4/60 A 34.4
+[jetson] [sync]   T   61.4/210   B  36.0/60 A 34.9
+[jetson] [sync]   T   73.3/210   B  37.1/60 A 35.6
+[jetson] [sync]   T   85.1/210   B  38.3/60 A 35.8
+[jetson] [sync]   T   96.9/210   B  39.2/60 A 35.9
+[jetson] [sync]   T  108.7/210   B  40.5/60 A 36.4
+[jetson] [sync]   T  120.9/210   B  42.2/60 A 36.7
+[jetson] [sync]   T  132.3/210   B  44.0/60 A 37.0
+[jetson] [sync]   T  143.6/210   B  45.7/60 A 37.1
+[jetson] [sync]   T  154.7/210   B  47.4/60 A 37.3
+[jetson] [sync]   T  166.3/210   B  49.0/60 A 37.4
+[jetson] [sync]   T  177.1/210   B  50.4/60 A 37.9
+[jetson] [sync]   T  187.8/210   B  52.2/60 A 37.9
+[jetson] [sync]   T  197.7/210   B  54.0/60 A 38.2
+[jetson] [sync]   T  204.7/210   B  55.4/60 A 38.2
+[jetson] [sync]   T  208.3/210   B  56.2/60 A 38.2
+[jetson] [sync]   T  209.2/210   B  57.1/60 A 38.4
+[jetson] [sync]   T  210.2/210   B  57.8/60 A 38.4
+[jetson] [sync]   T  211.4/210   B  58.7/60 A 38.7
+[jetson] [sync] AT TEMPERATURE — armed, waiting for print packets on udp:9410
+[orch] temperatures reached — starting robot executor
+[orch] applying the probe's measured surface delta to the print: z +0.154 mm (first layer stays at its designed height above the surface as measured minutes ago)
+[orch] started print_execute (pid 1438715)
+[jetson] [sync]   T  211.4/210   B  58.7/60 A 38.7
+[exec] Unknown tag "ros2_control" in /robot[@name='ur16e']
+[jetson] [sync]   T  213.5/210   B  59.5/60 A 38.8
+[jetson] [sync]   T  215.1/210   B  60.1/60 A 38.4
+[jetson] [sync]   T  215.2/210   B  60.4/60 A 38.4
+[exec] [print] chained IK (approach+print+retract, z-lift 0.2 mm): max err 0.001 mm
+[exec] [print] configuration continuity: max LOW jump 4.4 deg -> OK (max overall 4.4 deg at height 45 mm — travel reorient, slowed by timing)
+[exec] [print] approach sweep: tip min +0.5 mm vs bed (floor -1.3, 360 interpolated configs)
+[jetson] [sync]   T  213.7/210   B  60.5/60 A 38.3
+[exec] [print] HEAD-vs-bed: min +12.0 mm -> OK
+[exec] [print] HEAD-vs-arm: min +68.6 mm -> OK
+[exec] [print] movep profile: a=1.00 m/s^2, blend 0.45 x segment (median segment 2.00 mm -> r 0.90 mm); blended-speed cap ~sqrt(a*r) = 30 mm/s vs commanded 15 mm/s
+[exec] [print] plan cylinder_40mm_vase_purge_plan.json: 6321 print waypoints, path 12702 mm, est 14.1 min @ 15.0 mm/s
+[exec] [print] tip floor (sag-aware): min +0.5 mm vs bed (required >= -2.8) -> OK
+[exec] [print] joint margin: worst 57.4 deg -> OK
+[exec] [print] wrist singularity: wrist_2 stays 63.3 deg from 0/180 -> OK
+[exec] [print] arm-vs-bed: min +4.4 mm -> OK
+[exec] [print] first approach move: max joint delta 12.8 deg (gated, slow)
+[exec] [print] verdict: SAFE
+[exec] [print] resolved plan -> cylinder_40mm_vase_purge_plan_exec.json (playable in preview_traj.py)
+[exec] [print] dashboard: {'is in remote control': 'true', 'robotmode': 'Robotmode: RUNNING', 'safetystatus': 'Safetystatus: NORMAL'}
+[exec] [print] entering interpreter mode on 10.89.27.227 ...
+[jetson] [sync]   T  212.4/210   B  60.6/60 A 38.1
+[exec] [print] set_tcp cross-check: |FK - RTDE| = 0.0 mm
+[exec]   fed feature   0 (lift-to-safe) -> id 17726
+[jetson] [sync]   T  211.9/210   B  60.7/60 A 38.1
+[jetson] [sync]   T  212.4/210   B  61.0/60 A 38.1
+[exec]   ARRIVED feature   0  (||Δ||<2.00mm, v<0.0015)
+[exec]   fed feature   1 (traverse-high) -> id 17727
+[jetson] [sync]   T  212.1/210   B  61.1/60 A 38.0
+[jetson] [sync]   T  211.6/210   B  61.2/60 A 37.9
+[exec]   ARRIVED feature   1  (||Δ||<2.00mm, v<0.0015)
+[exec]   fed feature   2 (hover-above-start) -> id 17728
+[jetson] [sync]   T  210.8/210   B  61.2/60 A 37.8
+[exec]   ARRIVED feature   2  (||Δ||<2.00mm, v<0.0015)
+[exec]   fed feature   3 (descend-to-start) -> id 17729
+[jetson] [sync]   T  210.8/210   B  61.2/60 A 37.5
+[exec]   ARRIVED feature   3  (||Δ||<2.00mm, v<0.0015)
+[exec] [print] approach complete — starting the print path stream
+[orch] started extrusion_bridge (pid 1439760)
+[bridge] [bridge] plan mode: cylinder_40mm_vase_purge_plan.json (6321 waypoints, idx window [0,6320]) -> udp://10.89.27.253:9410 @ 50 Hz  e_per_mm=0.06236 pa_k_s=0.0400 pose_flip=on
+[bridge] [bridge] startup: nearest plan waypoint 0.2 mm from current TCP (OK)
+[exec] [print] streaming 6320 waypoints in 8 chunks (0 boundaries snapped to travels, 0 to layer seams)
+[bridge] [bridge] idx=15/6320 state=1 v=   4.8mm/s rate= 1.024mm/s eseq=0 (250 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 1.035 idx=13 active=True proto=2 E=   7.71mm T=210 B=61 A 37.5
+[bridge] [bridge] idx=30/6320 state=1 v=   4.8mm/s rate= 1.000mm/s eseq=0 (499 pkts)
+[bridge] [bridge] idx=45/6320 state=0 v=   5.2mm/s rate=-0.000mm/s eseq=1 (748 pkts)
+[jetson] [sync]   T  209.9/210   B  61.0/60 A 37.5
+[bridge] [bridge] idx=53/6320 state=0 v=   4.8mm/s rate=-0.000mm/s eseq=1 (997 pkts)
+[jetson] [sync]   T  209.5/210   B  60.9/60 A 37.4
+[bridge] [bridge] idx=61/6320 state=0 v=   5.4mm/s rate=-0.000mm/s eseq=1 (1246 pkts)
+[jetson] [sync]   T  209.8/210   B  60.9/60 A 37.5
+[jetson] [sync]   T  210.5/210   B  60.9/60 A 37.5
+[bridge] [bridge] idx=69/6320 state=0 v=   5.3mm/s rate=-0.000mm/s eseq=1 (1495 pkts)
+[jetson] [sync]   T  210.8/210   B  60.9/60 A 37.7
+[bridge] [bridge] idx=77/6320 state=0 v=   5.0mm/s rate=-0.000mm/s eseq=1 (1744 pkts)
+[jetson] [sync]   T  210.5/210   B  60.8/60 A 37.5
+[bridge] [bridge] idx=85/6320 state=0 v=   5.1mm/s rate=-0.000mm/s eseq=1 (1993 pkts)
+[jetson] [sync]   T  209.6/210   B  60.8/60 A 37.4
+[bridge] [bridge] idx=93/6320 state=0 v=   4.7mm/s rate= 0.000mm/s eseq=1 (2242 pkts)
+[jetson] [sync]   T  209.7/210   B  60.7/60 A 37.4
+[exec] [print] waypoint 100/6320  t=48s
+[jetson] [sync]   T  209.6/210   B  60.6/60 A 37.5
+[bridge] [bridge] idx=101/6320 state=0 v=   5.5mm/s rate= 0.000mm/s eseq=1 (2491 pkts)
+[jetson] [sync]   T  210.1/210   B  60.5/60 A 37.3
+[bridge] [bridge] idx=109/6320 state=0 v=   4.7mm/s rate= 0.000mm/s eseq=1 (2740 pkts)
+[jetson] [sync]   T  210.2/210   B  60.3/60 A 37.2
+[bridge] [bridge] idx=117/6320 state=0 v=   5.1mm/s rate= 0.000mm/s eseq=1 (2989 pkts)
+[jetson] [sync]   T  210.7/210   B  60.3/60 A 37.5
+[bridge] [bridge] idx=127/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (3238 pkts)
+[bridge] [bridge] idx=139/6320 state=1 v=   5.0mm/s rate= 0.325mm/s eseq=2 (3487 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.311 idx=138 active=True proto=2 E=  16.17mm T=210 B=60 A 36.8
+[bridge] [bridge] idx=151/6320 state=1 v=   4.5mm/s rate= 0.266mm/s eseq=2 (3736 pkts)
+[bridge] [bridge] idx=164/6320 state=1 v=   5.2mm/s rate= 0.329mm/s eseq=2 (3985 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.300 idx=162 active=True proto=2 E=  19.23mm T=210 B=60 A 37.2
+[bridge] [bridge] idx=176/6320 state=1 v=   4.3mm/s rate= 0.241mm/s eseq=2 (4234 pkts)
+[bridge] [bridge] idx=188/6320 state=1 v=   5.0mm/s rate= 0.309mm/s eseq=2 (4483 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.309 idx=186 active=True proto=2 E=  22.24mm T=211 B=60 A 37.5
+[exec] [print] waypoint 200/6320  t=94s
+[bridge] [bridge] idx=200/6320 state=1 v=   4.8mm/s rate= 0.294mm/s eseq=2 (4732 pkts)
+[bridge] [bridge] idx=212/6320 state=1 v=   4.9mm/s rate= 0.310mm/s eseq=2 (4981 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.259 idx=210 active=True proto=2 E=  25.30mm T=210 B=60 A 37.3
+[bridge] [bridge] idx=224/6320 state=1 v=   4.8mm/s rate= 0.297mm/s eseq=2 (5230 pkts)
+[bridge] [bridge] idx=236/6320 state=1 v=   4.9mm/s rate= 0.335mm/s eseq=2 (5479 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.283 idx=234 active=True proto=2 E=  28.37mm T=210 B=60 A 37.2
+[bridge] [bridge] idx=248/6320 state=1 v=   5.1mm/s rate= 0.325mm/s eseq=2 (5728 pkts)
+[bridge] [bridge] idx=260/6320 state=1 v=   4.6mm/s rate= 0.273mm/s eseq=2 (5977 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.320 idx=258 active=True proto=2 E=  31.43mm T=210 B=60 A 37.0
+[bridge] [bridge] idx=272/6320 state=1 v=   5.2mm/s rate= 0.351mm/s eseq=2 (6226 pkts)
+[bridge] [bridge] idx=284/6320 state=1 v=   5.0mm/s rate= 0.308mm/s eseq=2 (6475 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.294 idx=282 active=True proto=2 E=  34.49mm T=210 B=60 A 37.2
+[bridge] [bridge] idx=296/6320 state=1 v=   5.2mm/s rate= 0.325mm/s eseq=2 (6724 pkts)
+[exec] [print] waypoint 300/6320  t=136s
+[bridge] [bridge] idx=308/6320 state=1 v=   4.8mm/s rate= 0.289mm/s eseq=2 (6973 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.314 idx=306 active=True proto=2 E=  37.52mm T=210 B=60 A 37.3
+[bridge] [bridge] idx=320/6320 state=1 v=   4.8mm/s rate= 0.301mm/s eseq=2 (7222 pkts)
+[bridge] [bridge] idx=332/6320 state=1 v=   4.5mm/s rate= 0.265mm/s eseq=2 (7471 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.314 idx=330 active=True proto=2 E=  40.59mm T=211 B=60 A 37.0
+[bridge] [bridge] idx=344/6320 state=1 v=   5.0mm/s rate= 0.308mm/s eseq=2 (7720 pkts)
+[bridge] [bridge] idx=356/6320 state=1 v=   4.6mm/s rate= 0.283mm/s eseq=2 (7969 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.328 idx=354 active=True proto=2 E=  43.71mm T=204 B=60 A 37.4
+[bridge] [bridge] idx=368/6320 state=1 v=   4.8mm/s rate= 0.302mm/s eseq=2 (8218 pkts)
+[bridge] [bridge] idx=380/6320 state=1 v=   5.0mm/s rate= 0.303mm/s eseq=2 (8467 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.311 idx=378 active=True proto=2 E=  46.74mm T=205 B=60 A 37.6
+[bridge] [bridge] idx=392/6320 state=1 v=   5.4mm/s rate= 0.358mm/s eseq=2 (8716 pkts)
+[exec] [print] waypoint 400/6320  t=178s
+[bridge] [bridge] idx=404/6320 state=1 v=   5.1mm/s rate= 0.321mm/s eseq=2 (8965 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.326 idx=402 active=True proto=2 E=  49.77mm T=209 B=60 A 37.6
+[bridge] [bridge] idx=416/6320 state=1 v=   4.6mm/s rate= 0.275mm/s eseq=2 (9214 pkts)
+[bridge] [bridge] idx=428/6320 state=1 v=   4.8mm/s rate= 0.297mm/s eseq=2 (9463 pkts)
+[jetson] [sync] v=  4.1mm/s rate= 0.228 idx=426 active=True proto=2 E=  52.87mm T=206 B=60 A 37.6
+[bridge] [bridge] idx=440/6320 state=1 v=   4.9mm/s rate= 0.310mm/s eseq=2 (9712 pkts)
+[bridge] [bridge] idx=452/6320 state=1 v=   4.7mm/s rate= 0.283mm/s eseq=2 (9961 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.303 idx=450 active=True proto=2 E=  55.94mm T=210 B=60 A 37.7
+[bridge] [bridge] idx=464/6320 state=1 v=   4.9mm/s rate= 0.306mm/s eseq=2 (10210 pkts)
+[bridge] [bridge] idx=476/6320 state=1 v=   4.7mm/s rate= 0.278mm/s eseq=2 (10459 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.343 idx=474 active=True proto=2 E=  59.02mm T=210 B=60 A 37.8
+[bridge] [bridge] idx=488/6320 state=1 v=   4.8mm/s rate= 0.282mm/s eseq=2 (10708 pkts)
+[exec] [print] waypoint 500/6320  t=219s
+[bridge] [bridge] idx=500/6320 state=1 v=   5.3mm/s rate= 0.337mm/s eseq=2 (10957 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.316 idx=498 active=True proto=2 E=  62.10mm T=209 B=60 A 37.8
+[bridge] [bridge] idx=512/6320 state=1 v=   4.5mm/s rate= 0.272mm/s eseq=2 (11206 pkts)
+[bridge] [bridge] idx=524/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (11455 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.293 idx=522 active=True proto=2 E=  65.16mm T=211 B=60 A 37.8
+[bridge] [bridge] idx=536/6320 state=1 v=   5.2mm/s rate= 0.336mm/s eseq=2 (11704 pkts)
+[bridge] [bridge] idx=548/6320 state=1 v=   5.0mm/s rate= 0.315mm/s eseq=2 (11953 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.293 idx=546 active=True proto=2 E=  68.23mm T=209 B=60 A 38.0
+[bridge] [bridge] idx=560/6320 state=1 v=   5.2mm/s rate= 0.329mm/s eseq=2 (12202 pkts)
+[bridge] [bridge] idx=572/6320 state=1 v=   4.5mm/s rate= 0.260mm/s eseq=2 (12451 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.286 idx=570 active=True proto=2 E=  71.30mm T=210 B=60 A 37.9
+[bridge] [bridge] idx=584/6320 state=1 v=   4.8mm/s rate= 0.290mm/s eseq=2 (12700 pkts)
+[bridge] [bridge] idx=596/6320 state=1 v=   4.9mm/s rate= 0.301mm/s eseq=2 (12949 pkts)
+[exec] [print] waypoint 600/6320  t=261s
+[jetson] [sync] v=  4.8mm/s rate= 0.289 idx=594 active=True proto=2 E=  74.33mm T=211 B=60 A 38.0
+[bridge] [bridge] idx=608/6320 state=1 v=   4.5mm/s rate= 0.258mm/s eseq=2 (13198 pkts)
+[bridge] [bridge] idx=620/6320 state=1 v=   5.1mm/s rate= 0.324mm/s eseq=2 (13447 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.321 idx=618 active=True proto=2 E=  77.38mm T=209 B=60 A 38.4
+[bridge] [bridge] idx=632/6320 state=1 v=   4.7mm/s rate= 0.278mm/s eseq=2 (13696 pkts)
+[bridge] [bridge] idx=644/6320 state=1 v=   4.9mm/s rate= 0.312mm/s eseq=2 (13945 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.281 idx=642 active=True proto=2 E=  80.45mm T=210 B=60 A 38.3
+[bridge] [bridge] idx=656/6320 state=1 v=   4.8mm/s rate= 0.286mm/s eseq=2 (14194 pkts)
+[bridge] [bridge] idx=668/6320 state=1 v=   4.7mm/s rate= 0.286mm/s eseq=2 (14443 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.330 idx=666 active=True proto=2 E=  83.56mm T=210 B=60 A 38.2
+[bridge] [bridge] idx=680/6320 state=1 v=   4.9mm/s rate= 0.301mm/s eseq=2 (14692 pkts)
+[bridge] [bridge] idx=692/6320 state=1 v=   4.8mm/s rate= 0.285mm/s eseq=2 (14941 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.323 idx=690 active=True proto=2 E=  86.61mm T=209 B=60 A 38.3
+[exec] [print] waypoint 700/6320  t=303s
+[bridge] [bridge] idx=704/6320 state=1 v=   4.8mm/s rate= 0.314mm/s eseq=2 (15190 pkts)
+[bridge] [bridge] idx=716/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (15439 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.279 idx=714 active=True proto=2 E=  89.68mm T=212 B=60 A 38.1
+[bridge] [bridge] idx=728/6320 state=1 v=   4.7mm/s rate= 0.271mm/s eseq=2 (15688 pkts)
+[bridge] [bridge] idx=741/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (15937 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.290 idx=738 active=True proto=2 E=  92.74mm T=209 B=60 A 38.4
+[bridge] [bridge] idx=753/6320 state=1 v=   5.1mm/s rate= 0.327mm/s eseq=2 (16186 pkts)
+[bridge] [bridge] idx=765/6320 state=1 v=   4.8mm/s rate= 0.296mm/s eseq=2 (16435 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.275 idx=762 active=True proto=2 E=  95.80mm T=209 B=60 A 38.3
+[bridge] [bridge] idx=777/6320 state=1 v=   4.9mm/s rate= 0.294mm/s eseq=2 (16684 pkts)
+[bridge] [bridge] idx=789/6320 state=1 v=   4.7mm/s rate= 0.278mm/s eseq=2 (16933 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.292 idx=786 active=True proto=2 E=  98.88mm T=211 B=60 A 38.5
+[bridge] [bridge] idx=800/6320 state=1 v=   0.1mm/s rate= 0.004mm/s eseq=2 (17182 pkts)
+[jetson] [sync]   T  209.4/210   B  60.1/60 A 38.5
+[bridge] [bridge] idx=811/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (17431 pkts)
+[bridge] [bridge] idx=823/6320 state=1 v=   4.5mm/s rate= 0.275mm/s eseq=2 (17680 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.303 idx=823 active=True proto=2 E= 103.55mm T=209 B=60 A 38.3
+[bridge] [bridge] idx=835/6320 state=1 v=   5.1mm/s rate= 0.332mm/s eseq=2 (17929 pkts)
+[bridge] [bridge] idx=847/6320 state=1 v=   5.0mm/s rate= 0.306mm/s eseq=2 (18178 pkts)
+[jetson] [sync] v=  5.5mm/s rate= 0.365 idx=847 active=True proto=2 E= 106.62mm T=212 B=60 A 38.5
+[bridge] [bridge] idx=859/6320 state=1 v=   5.3mm/s rate= 0.351mm/s eseq=2 (18427 pkts)
+[bridge] [bridge] idx=871/6320 state=1 v=   4.9mm/s rate= 0.298mm/s eseq=2 (18676 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.328 idx=871 active=True proto=2 E= 109.68mm T=209 B=60 A 38.7
+[bridge] [bridge] idx=883/6320 state=1 v=   4.7mm/s rate= 0.289mm/s eseq=2 (18925 pkts)
+[bridge] [bridge] idx=895/6320 state=1 v=   4.7mm/s rate= 0.279mm/s eseq=2 (19174 pkts)
+[exec] [print] waypoint 900/6320  t=387s
+[jetson] [sync] v=  5.0mm/s rate= 0.323 idx=895 active=True proto=2 E= 112.74mm T=210 B=60 A 38.5
+[bridge] [bridge] idx=907/6320 state=1 v=   4.7mm/s rate= 0.274mm/s eseq=2 (19423 pkts)
+[bridge] [bridge] idx=919/6320 state=1 v=   4.8mm/s rate= 0.308mm/s eseq=2 (19672 pkts)
+[jetson] [sync] v=  4.4mm/s rate= 0.269 idx=919 active=True proto=2 E= 115.81mm T=211 B=60 A 38.7
+[bridge] [bridge] idx=931/6320 state=1 v=   4.9mm/s rate= 0.307mm/s eseq=2 (19921 pkts)
+[bridge] [bridge] idx=943/6320 state=1 v=   4.6mm/s rate= 0.262mm/s eseq=2 (20170 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.305 idx=943 active=True proto=2 E= 118.90mm T=208 B=60 A 38.9
+[bridge] [bridge] idx=955/6320 state=1 v=   4.6mm/s rate= 0.259mm/s eseq=2 (20419 pkts)
+[bridge] [bridge] idx=967/6320 state=1 v=   5.0mm/s rate= 0.319mm/s eseq=2 (20668 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.288 idx=967 active=True proto=2 E= 121.94mm T=212 B=60 A 38.8
+[bridge] [bridge] idx=979/6320 state=1 v=   4.4mm/s rate= 0.247mm/s eseq=2 (20917 pkts)
+[bridge] [bridge] idx=991/6320 state=1 v=   4.9mm/s rate= 0.288mm/s eseq=2 (21166 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.308 idx=991 active=True proto=2 E= 125.00mm T=210 B=60 A 38.7
+[exec] [print] waypoint 1000/6320  t=428s
+[bridge] [bridge] idx=1003/6320 state=1 v=   4.9mm/s rate= 0.297mm/s eseq=2 (21415 pkts)
+[bridge] [bridge] idx=1015/6320 state=1 v=   5.0mm/s rate= 0.320mm/s eseq=2 (21664 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.282 idx=1015 active=True proto=2 E= 128.06mm T=208 B=60 A 38.6
+[bridge] [bridge] idx=1027/6320 state=1 v=   5.1mm/s rate= 0.322mm/s eseq=2 (21913 pkts)
+[bridge] [bridge] idx=1039/6320 state=1 v=   4.6mm/s rate= 0.282mm/s eseq=2 (22162 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.332 idx=1039 active=True proto=2 E= 131.17mm T=212 B=60 A 38.8
+[bridge] [bridge] idx=1051/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (22411 pkts)
+[bridge] [bridge] idx=1063/6320 state=1 v=   4.9mm/s rate= 0.297mm/s eseq=2 (22660 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.297 idx=1063 active=True proto=2 E= 134.21mm T=208 B=60 A 38.7
+[bridge] [bridge] idx=1075/6320 state=1 v=   4.9mm/s rate= 0.308mm/s eseq=2 (22909 pkts)
+[bridge] [bridge] idx=1087/6320 state=1 v=   4.6mm/s rate= 0.263mm/s eseq=2 (23158 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.263 idx=1087 active=True proto=2 E= 137.24mm T=212 B=60 A 38.7
+[exec] [print] waypoint 1100/6320  t=470s
+[bridge] [bridge] idx=1099/6320 state=1 v=   4.9mm/s rate= 0.304mm/s eseq=2 (23407 pkts)
+[bridge] [bridge] idx=1111/6320 state=1 v=   4.8mm/s rate= 0.293mm/s eseq=2 (23656 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.297 idx=1111 active=True proto=2 E= 140.32mm T=211 B=60 A 38.9
+[bridge] [bridge] idx=1123/6320 state=1 v=   4.7mm/s rate= 0.280mm/s eseq=2 (23905 pkts)
+[bridge] [bridge] idx=1135/6320 state=1 v=   4.9mm/s rate= 0.312mm/s eseq=2 (24154 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.278 idx=1135 active=True proto=2 E= 143.41mm T=207 B=60 A 38.7
+[bridge] [bridge] idx=1147/6320 state=1 v=   5.2mm/s rate= 0.339mm/s eseq=2 (24403 pkts)
+[bridge] [bridge] idx=1159/6320 state=1 v=   5.1mm/s rate= 0.314mm/s eseq=2 (24652 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.303 idx=1159 active=True proto=2 E= 146.51mm T=213 B=60 A 38.6
+[bridge] [bridge] idx=1171/6320 state=1 v=   4.8mm/s rate= 0.300mm/s eseq=2 (24901 pkts)
+[bridge] [bridge] idx=1183/6320 state=1 v=   5.1mm/s rate= 0.326mm/s eseq=2 (25150 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.299 idx=1183 active=True proto=2 E= 149.53mm T=209 B=60 A 38.7
+[bridge] [bridge] idx=1195/6320 state=1 v=   5.0mm/s rate= 0.321mm/s eseq=2 (25399 pkts)
+[exec] [print] waypoint 1200/6320  t=512s
+[bridge] [bridge] idx=1207/6320 state=1 v=   5.2mm/s rate= 0.340mm/s eseq=2 (25648 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.331 idx=1207 active=True proto=2 E= 152.61mm T=210 B=60 A 38.8
+[bridge] [bridge] idx=1219/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (25897 pkts)
+[bridge] [bridge] idx=1231/6320 state=1 v=   4.6mm/s rate= 0.272mm/s eseq=2 (26146 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.299 idx=1231 active=True proto=2 E= 155.69mm T=212 B=60 A 38.8
+[bridge] [bridge] idx=1243/6320 state=1 v=   5.0mm/s rate= 0.301mm/s eseq=2 (26395 pkts)
+[bridge] [bridge] idx=1255/6320 state=1 v=   5.0mm/s rate= 0.321mm/s eseq=2 (26644 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.315 idx=1255 active=True proto=2 E= 158.76mm T=207 B=60 A 38.7
+[bridge] [bridge] idx=1267/6320 state=1 v=   5.0mm/s rate= 0.304mm/s eseq=2 (26893 pkts)
+[bridge] [bridge] idx=1279/6320 state=1 v=   5.0mm/s rate= 0.314mm/s eseq=2 (27142 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.341 idx=1279 active=True proto=2 E= 161.81mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=1291/6320 state=1 v=   4.5mm/s rate= 0.267mm/s eseq=2 (27391 pkts)
+[exec] [print] waypoint 1300/6320  t=553s
+[bridge] [bridge] idx=1304/6320 state=1 v=   5.0mm/s rate= 0.312mm/s eseq=2 (27640 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.287 idx=1303 active=True proto=2 E= 164.87mm T=210 B=60 A 38.7
+[bridge] [bridge] idx=1316/6320 state=1 v=   5.6mm/s rate= 0.386mm/s eseq=2 (27889 pkts)
+[bridge] [bridge] idx=1328/6320 state=1 v=   4.9mm/s rate= 0.308mm/s eseq=2 (28138 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.296 idx=1327 active=True proto=2 E= 167.91mm T=207 B=60 A 39.0
+[bridge] [bridge] idx=1340/6320 state=1 v=   5.1mm/s rate= 0.326mm/s eseq=2 (28387 pkts)
+[bridge] [bridge] idx=1352/6320 state=1 v=   4.4mm/s rate= 0.272mm/s eseq=2 (28636 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.295 idx=1351 active=True proto=2 E= 171.03mm T=213 B=60 A 38.9
+[bridge] [bridge] idx=1364/6320 state=1 v=   4.9mm/s rate= 0.314mm/s eseq=2 (28885 pkts)
+[bridge] [bridge] idx=1376/6320 state=1 v=   4.8mm/s rate= 0.287mm/s eseq=2 (29134 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.364 idx=1375 active=True proto=2 E= 174.11mm T=208 B=60 A 38.7
+[bridge] [bridge] idx=1388/6320 state=1 v=   4.8mm/s rate= 0.289mm/s eseq=2 (29383 pkts)
+[exec] [print] waypoint 1400/6320  t=595s
+[bridge] [bridge] idx=1400/6320 state=1 v=   5.0mm/s rate= 0.321mm/s eseq=2 (29632 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.266 idx=1399 active=True proto=2 E= 177.16mm T=212 B=60 A 38.7
+[bridge] [bridge] idx=1412/6320 state=1 v=   4.3mm/s rate= 0.236mm/s eseq=2 (29881 pkts)
+[bridge] [bridge] idx=1424/6320 state=1 v=   4.8mm/s rate= 0.292mm/s eseq=2 (30130 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.331 idx=1423 active=True proto=2 E= 180.19mm T=212 B=60 A 39.0
+[bridge] [bridge] idx=1436/6320 state=1 v=   5.0mm/s rate= 0.307mm/s eseq=2 (30379 pkts)
+[bridge] [bridge] idx=1448/6320 state=1 v=   4.4mm/s rate= 0.269mm/s eseq=2 (30628 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.299 idx=1447 active=True proto=2 E= 183.28mm T=206 B=60 A 39.1
+[bridge] [bridge] idx=1460/6320 state=1 v=   5.0mm/s rate= 0.315mm/s eseq=2 (30877 pkts)
+[bridge] [bridge] idx=1472/6320 state=1 v=   4.6mm/s rate= 0.271mm/s eseq=2 (31126 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.301 idx=1471 active=True proto=2 E= 186.38mm T=213 B=60 A 38.9
+[bridge] [bridge] idx=1484/6320 state=1 v=   4.9mm/s rate= 0.310mm/s eseq=2 (31375 pkts)
+[bridge] [bridge] idx=1496/6320 state=1 v=   5.4mm/s rate= 0.364mm/s eseq=2 (31624 pkts)
+[exec] [print] waypoint 1500/6320  t=637s
+[jetson] [sync] v=  5.2mm/s rate= 0.326 idx=1495 active=True proto=2 E= 189.43mm T=209 B=60 A 38.9
+[bridge] [bridge] idx=1508/6320 state=1 v=   4.8mm/s rate= 0.298mm/s eseq=2 (31873 pkts)
+[bridge] [bridge] idx=1520/6320 state=1 v=   5.3mm/s rate= 0.345mm/s eseq=2 (32122 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.345 idx=1519 active=True proto=2 E= 192.48mm T=209 B=60 A 39.1
+[bridge] [bridge] idx=1532/6320 state=1 v=   5.1mm/s rate= 0.336mm/s eseq=2 (32371 pkts)
+[bridge] [bridge] idx=1544/6320 state=1 v=   5.0mm/s rate= 0.318mm/s eseq=2 (32620 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.300 idx=1543 active=True proto=2 E= 195.52mm T=213 B=60 A 38.9
+[bridge] [bridge] idx=1556/6320 state=1 v=   4.6mm/s rate= 0.278mm/s eseq=2 (32869 pkts)
+[bridge] [bridge] idx=1568/6320 state=1 v=   5.2mm/s rate= 0.355mm/s eseq=2 (33118 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.293 idx=1567 active=True proto=2 E= 198.61mm T=206 B=60 A 38.9
+[bridge] [bridge] idx=1580/6320 state=1 v=   4.8mm/s rate= 0.293mm/s eseq=2 (33367 pkts)
+[bridge] [bridge] idx=1592/6320 state=1 v=   5.1mm/s rate= 0.324mm/s eseq=2 (33616 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.339 idx=1591 active=True proto=2 E= 201.69mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=1602/6320 state=1 v=   5.0mm/s rate= 0.326mm/s eseq=2 (33865 pkts)
+[jetson] [sync]   T  212.9/210   B  60.0/60 A 38.9
+[bridge] [bridge] idx=1614/6320 state=1 v=   5.1mm/s rate= 0.322mm/s eseq=2 (34114 pkts)
+[bridge] [bridge] idx=1626/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (34363 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.261 idx=1623 active=True proto=2 E= 205.72mm T=208 B=60 A 38.9
+[bridge] [bridge] idx=1638/6320 state=1 v=   4.8mm/s rate= 0.296mm/s eseq=2 (34612 pkts)
+[bridge] [bridge] idx=1650/6320 state=1 v=   5.1mm/s rate= 0.324mm/s eseq=2 (34861 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.312 idx=1647 active=True proto=2 E= 208.76mm T=211 B=60 A 38.8
+[bridge] [bridge] idx=1662/6320 state=1 v=   4.5mm/s rate= 0.270mm/s eseq=2 (35110 pkts)
+[bridge] [bridge] idx=1674/6320 state=1 v=   5.0mm/s rate= 0.319mm/s eseq=2 (35359 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.332 idx=1671 active=True proto=2 E= 211.83mm T=212 B=60 A 38.6
+[bridge] [bridge] idx=1686/6320 state=1 v=   4.7mm/s rate= 0.286mm/s eseq=2 (35608 pkts)
+[bridge] [bridge] idx=1698/6320 state=1 v=   5.1mm/s rate= 0.339mm/s eseq=2 (35857 pkts)
+[exec] [print] waypoint 1700/6320  t=721s
+[jetson] [sync] v=  4.9mm/s rate= 0.319 idx=1695 active=True proto=2 E= 214.89mm T=206 B=60 A 38.9
+[bridge] [bridge] idx=1710/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (36106 pkts)
+[bridge] [bridge] idx=1722/6320 state=1 v=   5.0mm/s rate= 0.312mm/s eseq=2 (36355 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.302 idx=1719 active=True proto=2 E= 218.00mm T=214 B=60 A 38.8
+[bridge] [bridge] idx=1734/6320 state=1 v=   5.0mm/s rate= 0.309mm/s eseq=2 (36604 pkts)
+[bridge] [bridge] idx=1746/6320 state=1 v=   4.9mm/s rate= 0.301mm/s eseq=2 (36853 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.284 idx=1743 active=True proto=2 E= 221.00mm T=209 B=60 A 38.5
+[bridge] [bridge] idx=1758/6320 state=1 v=   4.6mm/s rate= 0.282mm/s eseq=2 (37102 pkts)
+[bridge] [bridge] idx=1770/6320 state=1 v=   4.9mm/s rate= 0.306mm/s eseq=2 (37351 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.325 idx=1767 active=True proto=2 E= 224.06mm T=208 B=60 A 38.9
+[bridge] [bridge] idx=1782/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (37600 pkts)
+[bridge] [bridge] idx=1794/6320 state=1 v=   5.1mm/s rate= 0.332mm/s eseq=2 (37849 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.265 idx=1791 active=True proto=2 E= 227.14mm T=213 B=60 A 38.9
+[exec] [print] waypoint 1800/6320  t=762s
+[bridge] [bridge] idx=1806/6320 state=1 v=   4.8mm/s rate= 0.302mm/s eseq=2 (38098 pkts)
+[bridge] [bridge] idx=1818/6320 state=1 v=   4.5mm/s rate= 0.253mm/s eseq=2 (38347 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.328 idx=1815 active=True proto=2 E= 230.22mm T=205 B=60 A 38.7
+[bridge] [bridge] idx=1830/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (38596 pkts)
+[bridge] [bridge] idx=1842/6320 state=1 v=   5.1mm/s rate= 0.337mm/s eseq=2 (38845 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.310 idx=1839 active=True proto=2 E= 233.29mm T=213 B=60 A 38.7
+[bridge] [bridge] idx=1854/6320 state=1 v=   4.9mm/s rate= 0.318mm/s eseq=2 (39094 pkts)
+[bridge] [bridge] idx=1866/6320 state=1 v=   4.9mm/s rate= 0.296mm/s eseq=2 (39343 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.309 idx=1863 active=True proto=2 E= 236.33mm T=210 B=60 A 38.8
+[bridge] [bridge] idx=1879/6320 state=1 v=   4.8mm/s rate= 0.295mm/s eseq=2 (39592 pkts)
+[bridge] [bridge] idx=1891/6320 state=1 v=   5.1mm/s rate= 0.325mm/s eseq=2 (39841 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.280 idx=1887 active=True proto=2 E= 239.40mm T=207 B=60 A 38.9
+[exec] [print] waypoint 1900/6320  t=804s
+[bridge] [bridge] idx=1903/6320 state=1 v=   5.0mm/s rate= 0.295mm/s eseq=2 (40090 pkts)
+[bridge] [bridge] idx=1915/6320 state=1 v=   4.7mm/s rate= 0.287mm/s eseq=2 (40339 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.282 idx=1911 active=True proto=2 E= 242.47mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=1927/6320 state=1 v=   4.8mm/s rate= 0.289mm/s eseq=2 (40588 pkts)
+[bridge] [bridge] idx=1939/6320 state=1 v=   4.9mm/s rate= 0.318mm/s eseq=2 (40837 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.283 idx=1935 active=True proto=2 E= 245.56mm T=206 B=60 A 38.8
+[bridge] [bridge] idx=1951/6320 state=1 v=   5.3mm/s rate= 0.356mm/s eseq=2 (41086 pkts)
+[bridge] [bridge] idx=1963/6320 state=1 v=   5.0mm/s rate= 0.306mm/s eseq=2 (41335 pkts)
+[jetson] [sync] v=  5.4mm/s rate= 0.341 idx=1959 active=True proto=2 E= 248.59mm T=211 B=60 A 38.7
+[bridge] [bridge] idx=1975/6320 state=1 v=   4.9mm/s rate= 0.299mm/s eseq=2 (41584 pkts)
+[bridge] [bridge] idx=1987/6320 state=1 v=   4.7mm/s rate= 0.276mm/s eseq=2 (41833 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.303 idx=1983 active=True proto=2 E= 251.64mm T=211 B=60 A 39.0
+[exec] [print] waypoint 2000/6320  t=846s
+[bridge] [bridge] idx=1999/6320 state=1 v=   4.9mm/s rate= 0.312mm/s eseq=2 (42082 pkts)
+[bridge] [bridge] idx=2011/6320 state=1 v=   4.9mm/s rate= 0.311mm/s eseq=2 (42331 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.356 idx=2007 active=True proto=2 E= 254.71mm T=205 B=60 A 38.9
+[bridge] [bridge] idx=2023/6320 state=1 v=   5.1mm/s rate= 0.318mm/s eseq=2 (42580 pkts)
+[bridge] [bridge] idx=2035/6320 state=1 v=   4.7mm/s rate= 0.290mm/s eseq=2 (42829 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.346 idx=2031 active=True proto=2 E= 257.82mm T=213 B=60 A 38.9
+[bridge] [bridge] idx=2047/6320 state=1 v=   4.7mm/s rate= 0.289mm/s eseq=2 (43078 pkts)
+[bridge] [bridge] idx=2059/6320 state=1 v=   5.4mm/s rate= 0.344mm/s eseq=2 (43327 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.296 idx=2055 active=True proto=2 E= 260.89mm T=208 B=60 A 38.9
+[bridge] [bridge] idx=2071/6320 state=1 v=   4.8mm/s rate= 0.297mm/s eseq=2 (43576 pkts)
+[bridge] [bridge] idx=2083/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (43825 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.304 idx=2079 active=True proto=2 E= 263.93mm T=209 B=60 A 39.0
+[bridge] [bridge] idx=2095/6320 state=1 v=   4.8mm/s rate= 0.287mm/s eseq=2 (44074 pkts)
+[exec] [print] waypoint 2100/6320  t=887s
+[bridge] [bridge] idx=2107/6320 state=1 v=   5.2mm/s rate= 0.331mm/s eseq=2 (44323 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.311 idx=2103 active=True proto=2 E= 266.99mm T=212 B=60 A 38.9
+[bridge] [bridge] idx=2119/6320 state=1 v=   5.4mm/s rate= 0.347mm/s eseq=2 (44572 pkts)
+[bridge] [bridge] idx=2131/6320 state=1 v=   4.9mm/s rate= 0.300mm/s eseq=2 (44821 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.276 idx=2128 active=True proto=2 E= 270.08mm T=205 B=60 A 39.1
+[bridge] [bridge] idx=2143/6320 state=1 v=   5.2mm/s rate= 0.333mm/s eseq=2 (45070 pkts)
+[bridge] [bridge] idx=2155/6320 state=1 v=   5.1mm/s rate= 0.321mm/s eseq=2 (45319 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.313 idx=2152 active=True proto=2 E= 273.17mm T=213 B=60 A 38.9
+[bridge] [bridge] idx=2167/6320 state=1 v=   5.0mm/s rate= 0.311mm/s eseq=2 (45568 pkts)
+[bridge] [bridge] idx=2179/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (45817 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.308 idx=2176 active=True proto=2 E= 276.23mm T=209 B=60 A 38.7
+[bridge] [bridge] idx=2191/6320 state=1 v=   4.7mm/s rate= 0.289mm/s eseq=2 (46066 pkts)
+[exec] [print] waypoint 2200/6320  t=929s
+[bridge] [bridge] idx=2203/6320 state=1 v=   4.8mm/s rate= 0.300mm/s eseq=2 (46315 pkts)
+[jetson] [sync] v=  5.7mm/s rate= 0.390 idx=2200 active=True proto=2 E= 279.24mm T=208 B=60 A 38.8
+[bridge] [bridge] idx=2215/6320 state=1 v=   4.6mm/s rate= 0.279mm/s eseq=2 (46564 pkts)
+[bridge] [bridge] idx=2227/6320 state=1 v=   5.0mm/s rate= 0.315mm/s eseq=2 (46813 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.301 idx=2224 active=True proto=2 E= 282.33mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=2239/6320 state=1 v=   5.0mm/s rate= 0.317mm/s eseq=2 (47062 pkts)
+[bridge] [bridge] idx=2251/6320 state=1 v=   4.5mm/s rate= 0.271mm/s eseq=2 (47311 pkts)
+[jetson] [sync] v=  5.4mm/s rate= 0.359 idx=2248 active=True proto=2 E= 285.43mm T=205 B=60 A 38.8
+[bridge] [bridge] idx=2263/6320 state=1 v=   5.1mm/s rate= 0.325mm/s eseq=2 (47560 pkts)
+[bridge] [bridge] idx=2275/6320 state=1 v=   5.3mm/s rate= 0.348mm/s eseq=2 (47809 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.312 idx=2272 active=True proto=2 E= 288.47mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=2287/6320 state=1 v=   4.6mm/s rate= 0.282mm/s eseq=2 (48058 pkts)
+[exec] [print] waypoint 2300/6320  t=971s
+[bridge] [bridge] idx=2299/6320 state=1 v=   5.2mm/s rate= 0.344mm/s eseq=2 (48307 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.330 idx=2296 active=True proto=2 E= 291.51mm T=210 B=60 A 39.0
+[bridge] [bridge] idx=2311/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (48556 pkts)
+[bridge] [bridge] idx=2323/6320 state=1 v=   5.0mm/s rate= 0.305mm/s eseq=2 (48805 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.294 idx=2320 active=True proto=2 E= 294.55mm T=206 B=60 A 38.9
+[bridge] [bridge] idx=2335/6320 state=1 v=   5.3mm/s rate= 0.345mm/s eseq=2 (49054 pkts)
+[bridge] [bridge] idx=2347/6320 state=1 v=   4.7mm/s rate= 0.282mm/s eseq=2 (49303 pkts)
+[jetson] [sync] v=  4.4mm/s rate= 0.247 idx=2344 active=True proto=2 E= 297.64mm T=214 B=60 A 39.1
+[bridge] [bridge] idx=2359/6320 state=1 v=   4.8mm/s rate= 0.290mm/s eseq=2 (49552 pkts)
+[bridge] [bridge] idx=2371/6320 state=1 v=   4.6mm/s rate= 0.276mm/s eseq=2 (49801 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.333 idx=2368 active=True proto=2 E= 300.69mm T=206 B=60 A 38.9
+[bridge] [bridge] idx=2383/6320 state=1 v=   4.7mm/s rate= 0.286mm/s eseq=2 (50050 pkts)
+[bridge] [bridge] idx=2395/6320 state=1 v=   4.9mm/s rate= 0.300mm/s eseq=2 (50299 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.295 idx=2392 active=True proto=2 E= 303.76mm T=210 B=60 A 39.0
+[jetson] [sync]   T  214.2/210   B  59.9/60 A 39.3
+[bridge] [bridge] idx=2405/6320 state=1 v=   5.0mm/s rate= 0.320mm/s eseq=2 (50548 pkts)
+[bridge] [bridge] idx=2417/6320 state=1 v=   5.1mm/s rate= 0.320mm/s eseq=2 (50797 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.307 idx=2423 active=True proto=2 E= 307.80mm T=208 B=60 A 39.1
+[bridge] [bridge] idx=2429/6320 state=1 v=   4.8mm/s rate= 0.301mm/s eseq=2 (51046 pkts)
+[bridge] [bridge] idx=2442/6320 state=1 v=   4.6mm/s rate= 0.280mm/s eseq=2 (51295 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.305 idx=2447 active=True proto=2 E= 310.86mm T=208 B=60 A 39.2
+[bridge] [bridge] idx=2454/6320 state=1 v=   5.4mm/s rate= 0.359mm/s eseq=2 (51544 pkts)
+[bridge] [bridge] idx=2466/6320 state=1 v=   5.1mm/s rate= 0.317mm/s eseq=2 (51793 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.276 idx=2471 active=True proto=2 E= 313.93mm T=213 B=60 A 39.3
+[bridge] [bridge] idx=2478/6320 state=1 v=   5.0mm/s rate= 0.309mm/s eseq=2 (52042 pkts)
+[bridge] [bridge] idx=2490/6320 state=1 v=   4.8mm/s rate= 0.294mm/s eseq=2 (52291 pkts)
+[exec] [print] waypoint 2500/6320  t=1055s
+[jetson] [sync] v=  4.3mm/s rate= 0.247 idx=2495 active=True proto=2 E= 317.02mm T=205 B=60 A 39.1
+[bridge] [bridge] idx=2502/6320 state=1 v=   4.8mm/s rate= 0.304mm/s eseq=2 (52540 pkts)
+[bridge] [bridge] idx=2514/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (52789 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.299 idx=2519 active=True proto=2 E= 320.11mm T=212 B=60 A 39.2
+[bridge] [bridge] idx=2526/6320 state=1 v=   5.2mm/s rate= 0.332mm/s eseq=2 (53038 pkts)
+[bridge] [bridge] idx=2538/6320 state=1 v=   4.8mm/s rate= 0.297mm/s eseq=2 (53287 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.315 idx=2543 active=True proto=2 E= 323.19mm T=210 B=60 A 39.1
+[bridge] [bridge] idx=2550/6320 state=1 v=   5.0mm/s rate= 0.311mm/s eseq=2 (53536 pkts)
+[bridge] [bridge] idx=2562/6320 state=1 v=   5.1mm/s rate= 0.339mm/s eseq=2 (53785 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.308 idx=2567 active=True proto=2 E= 326.22mm T=206 B=60 A 39.2
+[bridge] [bridge] idx=2574/6320 state=1 v=   4.8mm/s rate= 0.292mm/s eseq=2 (54034 pkts)
+[bridge] [bridge] idx=2586/6320 state=1 v=   5.0mm/s rate= 0.301mm/s eseq=2 (54283 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.307 idx=2591 active=True proto=2 E= 329.29mm T=214 B=60 A 39.5
+[bridge] [bridge] idx=2598/6320 state=1 v=   5.0mm/s rate= 0.317mm/s eseq=2 (54532 pkts)
+[exec] [print] waypoint 2600/6320  t=1096s
+[bridge] [bridge] idx=2610/6320 state=1 v=   4.9mm/s rate= 0.311mm/s eseq=2 (54781 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.314 idx=2615 active=True proto=2 E= 332.37mm T=206 B=60 A 38.9
+[bridge] [bridge] idx=2622/6320 state=1 v=   4.3mm/s rate= 0.256mm/s eseq=2 (55030 pkts)
+[bridge] [bridge] idx=2634/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (55279 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.312 idx=2639 active=True proto=2 E= 335.42mm T=211 B=60 A 39.2
+[bridge] [bridge] idx=2646/6320 state=1 v=   5.0mm/s rate= 0.305mm/s eseq=2 (55528 pkts)
+[bridge] [bridge] idx=2658/6320 state=1 v=   4.9mm/s rate= 0.310mm/s eseq=2 (55777 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.327 idx=2664 active=True proto=2 E= 338.47mm T=212 B=60 A 39.1
+[bridge] [bridge] idx=2670/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (56026 pkts)
+[bridge] [bridge] idx=2682/6320 state=1 v=   4.8mm/s rate= 0.303mm/s eseq=2 (56275 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.282 idx=2688 active=True proto=2 E= 341.53mm T=205 B=60 A 38.8
+[bridge] [bridge] idx=2694/6320 state=1 v=   5.1mm/s rate= 0.328mm/s eseq=2 (56524 pkts)
+[exec] [print] waypoint 2700/6320  t=1138s
+[bridge] [bridge] idx=2706/6320 state=1 v=   4.9mm/s rate= 0.304mm/s eseq=2 (56773 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.284 idx=2712 active=True proto=2 E= 344.61mm T=214 B=60 A 39.3
+[bridge] [bridge] idx=2718/6320 state=1 v=   4.5mm/s rate= 0.268mm/s eseq=2 (57022 pkts)
+[bridge] [bridge] idx=2730/6320 state=1 v=   4.9mm/s rate= 0.295mm/s eseq=2 (57271 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.316 idx=2736 active=True proto=2 E= 347.69mm T=208 B=60 A 39.3
+[bridge] [bridge] idx=2742/6320 state=1 v=   4.8mm/s rate= 0.284mm/s eseq=2 (57520 pkts)
+[bridge] [bridge] idx=2754/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (57769 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.286 idx=2760 active=True proto=2 E= 350.73mm T=209 B=60 A 39.1
+[bridge] [bridge] idx=2766/6320 state=1 v=   5.1mm/s rate= 0.314mm/s eseq=2 (58018 pkts)
+[bridge] [bridge] idx=2778/6320 state=1 v=   4.6mm/s rate= 0.276mm/s eseq=2 (58267 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.286 idx=2784 active=True proto=2 E= 353.79mm T=214 B=60 A 39.1
+[bridge] [bridge] idx=2790/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (58516 pkts)
+[exec] [print] waypoint 2800/6320  t=1180s
+[bridge] [bridge] idx=2802/6320 state=1 v=   5.2mm/s rate= 0.316mm/s eseq=2 (58765 pkts)
+[jetson] [sync] v=  4.4mm/s rate= 0.275 idx=2808 active=True proto=2 E= 356.87mm T=206 B=60 A 38.7
+[bridge] [bridge] idx=2814/6320 state=1 v=   4.7mm/s rate= 0.285mm/s eseq=2 (59014 pkts)
+[bridge] [bridge] idx=2826/6320 state=1 v=   4.7mm/s rate= 0.279mm/s eseq=2 (59263 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.323 idx=2832 active=True proto=2 E= 359.95mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=2838/6320 state=1 v=   4.8mm/s rate= 0.309mm/s eseq=2 (59512 pkts)
+[bridge] [bridge] idx=2850/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (59761 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.298 idx=2856 active=True proto=2 E= 362.99mm T=210 B=60 A 38.9
+[bridge] [bridge] idx=2862/6320 state=1 v=   4.8mm/s rate= 0.295mm/s eseq=2 (60010 pkts)
+[bridge] [bridge] idx=2874/6320 state=1 v=   5.0mm/s rate= 0.329mm/s eseq=2 (60259 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.314 idx=2880 active=True proto=2 E= 366.07mm T=207 B=60 A 38.9
+[bridge] [bridge] idx=2886/6320 state=1 v=   4.8mm/s rate= 0.295mm/s eseq=2 (60508 pkts)
+[bridge] [bridge] idx=2898/6320 state=1 v=   4.6mm/s rate= 0.282mm/s eseq=2 (60757 pkts)
+[exec] [print] waypoint 2900/6320  t=1221s
+[jetson] [sync] v=  4.9mm/s rate= 0.323 idx=2904 active=True proto=2 E= 369.15mm T=215 B=60 A 39.1
+[bridge] [bridge] idx=2910/6320 state=1 v=   5.1mm/s rate= 0.324mm/s eseq=2 (61006 pkts)
+[bridge] [bridge] idx=2922/6320 state=1 v=   5.1mm/s rate= 0.326mm/s eseq=2 (61255 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.346 idx=2928 active=True proto=2 E= 372.23mm T=206 B=60 A 39.0
+[bridge] [bridge] idx=2934/6320 state=1 v=   5.4mm/s rate= 0.358mm/s eseq=2 (61504 pkts)
+[bridge] [bridge] idx=2946/6320 state=1 v=   5.1mm/s rate= 0.322mm/s eseq=2 (61753 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.326 idx=2952 active=True proto=2 E= 375.27mm T=212 B=60 A 39.1
+[bridge] [bridge] idx=2958/6320 state=1 v=   5.0mm/s rate= 0.322mm/s eseq=2 (62002 pkts)
+[bridge] [bridge] idx=2970/6320 state=1 v=   4.7mm/s rate= 0.277mm/s eseq=2 (62251 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.310 idx=2976 active=True proto=2 E= 378.33mm T=212 B=60 A 39.2
+[bridge] [bridge] idx=2982/6320 state=1 v=   4.7mm/s rate= 0.259mm/s eseq=2 (62500 pkts)
+[bridge] [bridge] idx=2994/6320 state=1 v=   4.5mm/s rate= 0.270mm/s eseq=2 (62749 pkts)
+[exec] [print] waypoint 3000/6320  t=1263s
+[jetson] [sync] v=  4.8mm/s rate= 0.304 idx=3000 active=True proto=2 E= 381.36mm T=207 B=60 A 39.0
+[bridge] [bridge] idx=3006/6320 state=1 v=   5.0mm/s rate= 0.299mm/s eseq=2 (62998 pkts)
+[bridge] [bridge] idx=3018/6320 state=1 v=   5.6mm/s rate= 0.377mm/s eseq=2 (63247 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.318 idx=3024 active=True proto=2 E= 384.48mm T=215 B=60 A 39.1
+[bridge] [bridge] idx=3030/6320 state=1 v=   4.7mm/s rate= 0.284mm/s eseq=2 (63496 pkts)
+[bridge] [bridge] idx=3042/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (63745 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.322 idx=3048 active=True proto=2 E= 387.54mm T=207 B=60 A 38.9
+[bridge] [bridge] idx=3055/6320 state=1 v=   4.9mm/s rate= 0.306mm/s eseq=2 (63994 pkts)
+[bridge] [bridge] idx=3067/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (64243 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.296 idx=3072 active=True proto=2 E= 390.59mm T=211 B=60 A 39.0
+[bridge] [bridge] idx=3079/6320 state=1 v=   5.2mm/s rate= 0.331mm/s eseq=2 (64492 pkts)
+[bridge] [bridge] idx=3091/6320 state=1 v=   4.6mm/s rate= 0.252mm/s eseq=2 (64741 pkts)
+[exec] [print] waypoint 3100/6320  t=1305s
+[jetson] [sync] v=  5.1mm/s rate= 0.326 idx=3096 active=True proto=2 E= 393.64mm T=212 B=60 A 39.0
+[bridge] [bridge] idx=3103/6320 state=1 v=   5.0mm/s rate= 0.308mm/s eseq=2 (64990 pkts)
+[bridge] [bridge] idx=3115/6320 state=1 v=   5.9mm/s rate= 0.391mm/s eseq=2 (65239 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.330 idx=3120 active=True proto=2 E= 396.72mm T=206 B=60 A 38.9
+[bridge] [bridge] idx=3127/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (65488 pkts)
+[bridge] [bridge] idx=3139/6320 state=1 v=   4.9mm/s rate= 0.293mm/s eseq=2 (65737 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.296 idx=3144 active=True proto=2 E= 399.82mm T=214 B=60 A 39.0
+[bridge] [bridge] idx=3151/6320 state=1 v=   5.1mm/s rate= 0.338mm/s eseq=2 (65986 pkts)
+[bridge] [bridge] idx=3163/6320 state=1 v=   4.9mm/s rate= 0.298mm/s eseq=2 (66235 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.283 idx=3168 active=True proto=2 E= 402.88mm T=208 B=60 A 39.1
+[bridge] [bridge] idx=3175/6320 state=1 v=   5.1mm/s rate= 0.326mm/s eseq=2 (66484 pkts)
+[bridge] [bridge] idx=3187/6320 state=1 v=   4.6mm/s rate= 0.269mm/s eseq=2 (66733 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.292 idx=3192 active=True proto=2 E= 405.95mm T=210 B=60 A 38.8
+[bridge] [bridge] idx=3199/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (66982 pkts)
+[jetson] [sync]   T  213.6/210   B  59.9/60 A 38.9
+[bridge] [bridge] idx=3209/6320 state=1 v=   4.5mm/s rate= 0.274mm/s eseq=2 (67231 pkts)
+[bridge] [bridge] idx=3221/6320 state=1 v=   5.3mm/s rate= 0.349mm/s eseq=2 (67480 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.303 idx=3224 active=True proto=2 E= 409.99mm T=209 B=60 A 38.9
+[bridge] [bridge] idx=3233/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (67729 pkts)
+[bridge] [bridge] idx=3245/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (67978 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.285 idx=3248 active=True proto=2 E= 413.04mm T=208 B=60 A 39.0
+[bridge] [bridge] idx=3257/6320 state=1 v=   5.0mm/s rate= 0.312mm/s eseq=2 (68227 pkts)
+[bridge] [bridge] idx=3269/6320 state=1 v=   5.3mm/s rate= 0.349mm/s eseq=2 (68476 pkts)
+[jetson] [sync] v=  5.5mm/s rate= 0.372 idx=3272 active=True proto=2 E= 416.16mm T=215 B=60 A 39.0
+[bridge] [bridge] idx=3281/6320 state=1 v=   5.1mm/s rate= 0.333mm/s eseq=2 (68725 pkts)
+[bridge] [bridge] idx=3293/6320 state=1 v=   5.2mm/s rate= 0.329mm/s eseq=2 (68974 pkts)
+[exec] [print] waypoint 3300/6320  t=1389s
+[jetson] [sync] v=  4.9mm/s rate= 0.295 idx=3296 active=True proto=2 E= 419.22mm T=206 B=60 A 38.7
+[bridge] [bridge] idx=3305/6320 state=1 v=   4.6mm/s rate= 0.281mm/s eseq=2 (69223 pkts)
+[bridge] [bridge] idx=3317/6320 state=1 v=   4.8mm/s rate= 0.286mm/s eseq=2 (69472 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.298 idx=3320 active=True proto=2 E= 422.28mm T=211 B=60 A 39.0
+[bridge] [bridge] idx=3329/6320 state=1 v=   5.5mm/s rate= 0.363mm/s eseq=2 (69721 pkts)
+[bridge] [bridge] idx=3341/6320 state=1 v=   4.6mm/s rate= 0.283mm/s eseq=2 (69970 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.321 idx=3344 active=True proto=2 E= 425.32mm T=212 B=60 A 39.2
+[bridge] [bridge] idx=3353/6320 state=1 v=   5.2mm/s rate= 0.333mm/s eseq=2 (70219 pkts)
+[bridge] [bridge] idx=3365/6320 state=1 v=   5.2mm/s rate= 0.330mm/s eseq=2 (70468 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.286 idx=3368 active=True proto=2 E= 428.38mm T=206 B=60 A 39.1
+[bridge] [bridge] idx=3377/6320 state=1 v=   5.0mm/s rate= 0.305mm/s eseq=2 (70717 pkts)
+[bridge] [bridge] idx=3389/6320 state=1 v=   5.3mm/s rate= 0.345mm/s eseq=2 (70966 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.335 idx=3392 active=True proto=2 E= 431.48mm T=214 B=60 A 38.7
+[exec] [print] waypoint 3400/6320  t=1430s
+[bridge] [bridge] idx=3401/6320 state=1 v=   4.7mm/s rate= 0.289mm/s eseq=2 (71215 pkts)
+[bridge] [bridge] idx=3413/6320 state=1 v=   5.1mm/s rate= 0.330mm/s eseq=2 (71464 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.308 idx=3416 active=True proto=2 E= 434.49mm T=208 B=60 A 38.9
+[bridge] [bridge] idx=3425/6320 state=1 v=   4.9mm/s rate= 0.316mm/s eseq=2 (71713 pkts)
+[bridge] [bridge] idx=3437/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (71962 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.323 idx=3440 active=True proto=2 E= 437.54mm T=210 B=60 A 39.0
+[bridge] [bridge] idx=3449/6320 state=1 v=   5.3mm/s rate= 0.343mm/s eseq=2 (72211 pkts)
+[bridge] [bridge] idx=3461/6320 state=1 v=   5.1mm/s rate= 0.339mm/s eseq=2 (72460 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.327 idx=3464 active=True proto=2 E= 440.61mm T=213 B=60 A 39.3
+[bridge] [bridge] idx=3473/6320 state=1 v=   5.0mm/s rate= 0.322mm/s eseq=2 (72709 pkts)
+[bridge] [bridge] idx=3485/6320 state=1 v=   4.9mm/s rate= 0.292mm/s eseq=2 (72958 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.304 idx=3488 active=True proto=2 E= 443.70mm T=206 B=60 A 39.0
+[bridge] [bridge] idx=3497/6320 state=1 v=   4.8mm/s rate= 0.295mm/s eseq=2 (73207 pkts)
+[exec] [print] waypoint 3500/6320  t=1472s
+[bridge] [bridge] idx=3509/6320 state=1 v=   5.3mm/s rate= 0.324mm/s eseq=2 (73456 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.294 idx=3512 active=True proto=2 E= 446.77mm T=214 B=60 A 39.5
+[bridge] [bridge] idx=3521/6320 state=1 v=   4.7mm/s rate= 0.288mm/s eseq=2 (73705 pkts)
+[bridge] [bridge] idx=3533/6320 state=1 v=   4.9mm/s rate= 0.295mm/s eseq=2 (73954 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.308 idx=3536 active=True proto=2 E= 449.81mm T=209 B=60 A 39.0
+[bridge] [bridge] idx=3545/6320 state=1 v=   4.5mm/s rate= 0.266mm/s eseq=2 (74203 pkts)
+[bridge] [bridge] idx=3557/6320 state=1 v=   5.0mm/s rate= 0.327mm/s eseq=2 (74452 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.300 idx=3560 active=True proto=2 E= 452.87mm T=208 B=60 A 39.1
+[bridge] [bridge] idx=3569/6320 state=1 v=   4.9mm/s rate= 0.312mm/s eseq=2 (74701 pkts)
+[bridge] [bridge] idx=3581/6320 state=1 v=   5.0mm/s rate= 0.306mm/s eseq=2 (74950 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.337 idx=3584 active=True proto=2 E= 455.96mm T=214 B=60 A 39.1
+[bridge] [bridge] idx=3593/6320 state=1 v=   4.8mm/s rate= 0.298mm/s eseq=2 (75199 pkts)
+[exec] [print] waypoint 3600/6320  t=1514s
+[bridge] [bridge] idx=3605/6320 state=1 v=   4.7mm/s rate= 0.277mm/s eseq=2 (75448 pkts)
+[jetson] [sync] v=  5.7mm/s rate= 0.384 idx=3608 active=True proto=2 E= 459.00mm T=206 B=60 A 39.1
+[bridge] [bridge] idx=3617/6320 state=1 v=   4.7mm/s rate= 0.277mm/s eseq=2 (75697 pkts)
+[bridge] [bridge] idx=3629/6320 state=1 v=   4.7mm/s rate= 0.289mm/s eseq=2 (75946 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.349 idx=3632 active=True proto=2 E= 462.04mm T=212 B=60 A 38.8
+[bridge] [bridge] idx=3642/6320 state=1 v=   5.0mm/s rate= 0.327mm/s eseq=2 (76195 pkts)
+[bridge] [bridge] idx=3654/6320 state=1 v=   4.7mm/s rate= 0.276mm/s eseq=2 (76444 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.326 idx=3656 active=True proto=2 E= 465.09mm T=210 B=60 A 39.4
+[bridge] [bridge] idx=3666/6320 state=1 v=   4.9mm/s rate= 0.311mm/s eseq=2 (76693 pkts)
+[bridge] [bridge] idx=3678/6320 state=1 v=   4.6mm/s rate= 0.276mm/s eseq=2 (76942 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.272 idx=3680 active=True proto=2 E= 468.14mm T=208 B=60 A 39.2
+[bridge] [bridge] idx=3690/6320 state=1 v=   5.2mm/s rate= 0.338mm/s eseq=2 (77191 pkts)
+[exec] [print] waypoint 3700/6320  t=1555s
+[bridge] [bridge] idx=3702/6320 state=1 v=   5.0mm/s rate= 0.312mm/s eseq=2 (77440 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.275 idx=3704 active=True proto=2 E= 471.23mm T=214 B=60 A 39.1
+[bridge] [bridge] idx=3714/6320 state=1 v=   4.7mm/s rate= 0.292mm/s eseq=2 (77689 pkts)
+[bridge] [bridge] idx=3726/6320 state=1 v=   5.2mm/s rate= 0.340mm/s eseq=2 (77938 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.336 idx=3728 active=True proto=2 E= 474.29mm T=207 B=60 A 39.1
+[bridge] [bridge] idx=3738/6320 state=1 v=   4.6mm/s rate= 0.292mm/s eseq=2 (78187 pkts)
+[bridge] [bridge] idx=3750/6320 state=1 v=   4.8mm/s rate= 0.291mm/s eseq=2 (78436 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.318 idx=3752 active=True proto=2 E= 477.35mm T=211 B=60 A 39.1
+[bridge] [bridge] idx=3762/6320 state=1 v=   4.8mm/s rate= 0.289mm/s eseq=2 (78685 pkts)
+[bridge] [bridge] idx=3774/6320 state=1 v=   5.0mm/s rate= 0.311mm/s eseq=2 (78934 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.266 idx=3776 active=True proto=2 E= 480.40mm T=212 B=60 A 39.4
+[bridge] [bridge] idx=3786/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (79183 pkts)
+[bridge] [bridge] idx=3798/6320 state=1 v=   4.7mm/s rate= 0.298mm/s eseq=2 (79432 pkts)
+[exec] [print] waypoint 3800/6320  t=1597s
+[jetson] [sync] v=  4.6mm/s rate= 0.286 idx=3800 active=True proto=2 E= 483.47mm T=207 B=60 A 39.0
+[bridge] [bridge] idx=3810/6320 state=1 v=   4.8mm/s rate= 0.295mm/s eseq=2 (79681 pkts)
+[bridge] [bridge] idx=3822/6320 state=1 v=   5.3mm/s rate= 0.353mm/s eseq=2 (79930 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.314 idx=3824 active=True proto=2 E= 486.55mm T=213 B=60 A 39.3
+[bridge] [bridge] idx=3834/6320 state=1 v=   4.9mm/s rate= 0.314mm/s eseq=2 (80179 pkts)
+[bridge] [bridge] idx=3846/6320 state=1 v=   5.0mm/s rate= 0.318mm/s eseq=2 (80428 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.288 idx=3848 active=True proto=2 E= 489.57mm T=208 B=60 A 39.0
+[bridge] [bridge] idx=3858/6320 state=1 v=   4.8mm/s rate= 0.311mm/s eseq=2 (80677 pkts)
+[bridge] [bridge] idx=3870/6320 state=1 v=   4.9mm/s rate= 0.296mm/s eseq=2 (80926 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.322 idx=3872 active=True proto=2 E= 492.65mm T=209 B=60 A 39.3
+[bridge] [bridge] idx=3882/6320 state=1 v=   5.3mm/s rate= 0.341mm/s eseq=2 (81175 pkts)
+[bridge] [bridge] idx=3894/6320 state=1 v=   4.9mm/s rate= 0.301mm/s eseq=2 (81424 pkts)
+[exec] [print] waypoint 3900/6320  t=1639s
+[jetson] [sync] v=  5.0mm/s rate= 0.328 idx=3896 active=True proto=2 E= 495.75mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=3906/6320 state=1 v=   5.2mm/s rate= 0.340mm/s eseq=2 (81673 pkts)
+[bridge] [bridge] idx=3918/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (81922 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.323 idx=3920 active=True proto=2 E= 498.84mm T=206 B=60 A 39.0
+[bridge] [bridge] idx=3930/6320 state=1 v=   5.2mm/s rate= 0.334mm/s eseq=2 (82171 pkts)
+[bridge] [bridge] idx=3942/6320 state=1 v=   4.8mm/s rate= 0.294mm/s eseq=2 (82420 pkts)
+[jetson] [sync] v=  5.4mm/s rate= 0.349 idx=3944 active=True proto=2 E= 501.88mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=3954/6320 state=1 v=   4.8mm/s rate= 0.288mm/s eseq=2 (82669 pkts)
+[bridge] [bridge] idx=3966/6320 state=1 v=   5.2mm/s rate= 0.333mm/s eseq=2 (82918 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.309 idx=3968 active=True proto=2 E= 504.95mm T=209 B=60 A 39.2
+[bridge] [bridge] idx=3978/6320 state=1 v=   4.9mm/s rate= 0.305mm/s eseq=2 (83167 pkts)
+[bridge] [bridge] idx=3990/6320 state=1 v=   4.7mm/s rate= 0.288mm/s eseq=2 (83416 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.320 idx=3992 active=True proto=2 E= 507.99mm T=208 B=60 A 39.0
+[bridge] [bridge] idx=4000/6320 state=1 v=   5.3mm/s rate= 0.361mm/s eseq=2 (83665 pkts)
+[bridge] [bridge] idx=4012/6320 state=1 v=   4.8mm/s rate= 0.295mm/s eseq=2 (83914 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.285 idx=4014 active=True proto=2 E= 510.85mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=4024/6320 state=1 v=   4.7mm/s rate= 0.280mm/s eseq=2 (84163 pkts)
+[bridge] [bridge] idx=4036/6320 state=1 v=   5.7mm/s rate= 0.393mm/s eseq=2 (84412 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.348 idx=4038 active=True proto=2 E= 513.88mm T=207 B=60 A 39.2
+[bridge] [bridge] idx=4048/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (84661 pkts)
+[bridge] [bridge] idx=4060/6320 state=1 v=   4.9mm/s rate= 0.294mm/s eseq=2 (84910 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.291 idx=4062 active=True proto=2 E= 516.91mm T=211 B=60 A 39.2
+[bridge] [bridge] idx=4072/6320 state=1 v=   5.2mm/s rate= 0.322mm/s eseq=2 (85159 pkts)
+[bridge] [bridge] idx=4084/6320 state=1 v=   4.8mm/s rate= 0.298mm/s eseq=2 (85408 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.293 idx=4086 active=True proto=2 E= 519.96mm T=212 B=60 A 39.3
+[bridge] [bridge] idx=4096/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (85657 pkts)
+[exec] [print] waypoint 4100/6320  t=1723s
+[bridge] [bridge] idx=4108/6320 state=1 v=   4.8mm/s rate= 0.311mm/s eseq=2 (85906 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.355 idx=4110 active=True proto=2 E= 523.02mm T=207 B=60 A 39.1
+[bridge] [bridge] idx=4120/6320 state=1 v=   4.9mm/s rate= 0.301mm/s eseq=2 (86155 pkts)
+[bridge] [bridge] idx=4132/6320 state=1 v=   4.9mm/s rate= 0.289mm/s eseq=2 (86404 pkts)
+[jetson] [sync] v=  5.4mm/s rate= 0.344 idx=4134 active=True proto=2 E= 526.08mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=4144/6320 state=1 v=   4.6mm/s rate= 0.283mm/s eseq=2 (86653 pkts)
+[bridge] [bridge] idx=4156/6320 state=1 v=   5.2mm/s rate= 0.332mm/s eseq=2 (86902 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.363 idx=4158 active=True proto=2 E= 529.15mm T=208 B=60 A 39.0
+[bridge] [bridge] idx=4168/6320 state=1 v=   4.9mm/s rate= 0.311mm/s eseq=2 (87151 pkts)
+[bridge] [bridge] idx=4180/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (87400 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.320 idx=4182 active=True proto=2 E= 532.20mm T=209 B=60 A 39.1
+[bridge] [bridge] idx=4193/6320 state=1 v=   5.1mm/s rate= 0.318mm/s eseq=2 (87649 pkts)
+[exec] [print] waypoint 4200/6320  t=1764s
+[bridge] [bridge] idx=4205/6320 state=1 v=   4.6mm/s rate= 0.287mm/s eseq=2 (87898 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.304 idx=4206 active=True proto=2 E= 535.25mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=4217/6320 state=1 v=   5.0mm/s rate= 0.315mm/s eseq=2 (88147 pkts)
+[bridge] [bridge] idx=4229/6320 state=1 v=   4.4mm/s rate= 0.256mm/s eseq=2 (88396 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.275 idx=4230 active=True proto=2 E= 538.34mm T=206 B=60 A 39.1
+[bridge] [bridge] idx=4241/6320 state=1 v=   5.2mm/s rate= 0.333mm/s eseq=2 (88645 pkts)
+[bridge] [bridge] idx=4253/6320 state=1 v=   4.9mm/s rate= 0.301mm/s eseq=2 (88894 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.296 idx=4254 active=True proto=2 E= 541.39mm T=213 B=60 A 39.2
+[bridge] [bridge] idx=4265/6320 state=1 v=   4.8mm/s rate= 0.297mm/s eseq=2 (89143 pkts)
+[bridge] [bridge] idx=4277/6320 state=1 v=   5.0mm/s rate= 0.324mm/s eseq=2 (89392 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.294 idx=4278 active=True proto=2 E= 544.42mm T=209 B=60 A 38.9
+[bridge] [bridge] idx=4289/6320 state=1 v=   5.1mm/s rate= 0.328mm/s eseq=2 (89641 pkts)
+[exec] [print] waypoint 4300/6320  t=1806s
+[bridge] [bridge] idx=4301/6320 state=1 v=   4.7mm/s rate= 0.286mm/s eseq=2 (89890 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.287 idx=4302 active=True proto=2 E= 547.50mm T=208 B=60 A 39.4
+[bridge] [bridge] idx=4313/6320 state=1 v=   5.0mm/s rate= 0.320mm/s eseq=2 (90139 pkts)
+[bridge] [bridge] idx=4325/6320 state=1 v=   4.6mm/s rate= 0.282mm/s eseq=2 (90388 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.293 idx=4326 active=True proto=2 E= 550.57mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=4337/6320 state=1 v=   4.9mm/s rate= 0.289mm/s eseq=2 (90637 pkts)
+[bridge] [bridge] idx=4349/6320 state=1 v=   4.8mm/s rate= 0.284mm/s eseq=2 (90886 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.271 idx=4350 active=True proto=2 E= 553.62mm T=207 B=60 A 39.2
+[bridge] [bridge] idx=4361/6320 state=1 v=   4.9mm/s rate= 0.323mm/s eseq=2 (91135 pkts)
+[bridge] [bridge] idx=4373/6320 state=1 v=   4.9mm/s rate= 0.306mm/s eseq=2 (91384 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.303 idx=4374 active=True proto=2 E= 556.68mm T=212 B=60 A 39.0
+[bridge] [bridge] idx=4385/6320 state=1 v=   5.0mm/s rate= 0.309mm/s eseq=2 (91633 pkts)
+[bridge] [bridge] idx=4397/6320 state=1 v=   5.1mm/s rate= 0.332mm/s eseq=2 (91882 pkts)
+[exec] [print] waypoint 4400/6320  t=1848s
+[jetson] [sync] v=  4.9mm/s rate= 0.299 idx=4398 active=True proto=2 E= 559.74mm T=211 B=60 A 39.2
+[bridge] [bridge] idx=4409/6320 state=1 v=   5.2mm/s rate= 0.323mm/s eseq=2 (92131 pkts)
+[bridge] [bridge] idx=4421/6320 state=1 v=   5.4mm/s rate= 0.362mm/s eseq=2 (92380 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.289 idx=4422 active=True proto=2 E= 562.81mm T=207 B=60 A 39.1
+[bridge] [bridge] idx=4433/6320 state=1 v=   5.0mm/s rate= 0.310mm/s eseq=2 (92629 pkts)
+[bridge] [bridge] idx=4445/6320 state=1 v=   5.3mm/s rate= 0.356mm/s eseq=2 (92878 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.320 idx=4446 active=True proto=2 E= 565.89mm T=213 B=60 A 39.3
+[bridge] [bridge] idx=4457/6320 state=1 v=   4.7mm/s rate= 0.282mm/s eseq=2 (93127 pkts)
+[bridge] [bridge] idx=4469/6320 state=1 v=   4.8mm/s rate= 0.283mm/s eseq=2 (93376 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.286 idx=4470 active=True proto=2 E= 568.93mm T=207 B=60 A 39.2
+[bridge] [bridge] idx=4481/6320 state=1 v=   4.7mm/s rate= 0.299mm/s eseq=2 (93625 pkts)
+[bridge] [bridge] idx=4493/6320 state=1 v=   5.2mm/s rate= 0.332mm/s eseq=2 (93874 pkts)
+[exec] [print] waypoint 4500/6320  t=1889s
+[jetson] [sync] v=  4.9mm/s rate= 0.294 idx=4494 active=True proto=2 E= 572.00mm T=210 B=60 A 39.1
+[bridge] [bridge] idx=4505/6320 state=1 v=   4.8mm/s rate= 0.281mm/s eseq=2 (94123 pkts)
+[bridge] [bridge] idx=4517/6320 state=1 v=   4.6mm/s rate= 0.285mm/s eseq=2 (94372 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.306 idx=4518 active=True proto=2 E= 575.07mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=4529/6320 state=1 v=   5.0mm/s rate= 0.309mm/s eseq=2 (94621 pkts)
+[bridge] [bridge] idx=4541/6320 state=1 v=   4.5mm/s rate= 0.283mm/s eseq=2 (94870 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.312 idx=4542 active=True proto=2 E= 578.13mm T=207 B=60 A 39.0
+[bridge] [bridge] idx=4553/6320 state=1 v=   5.0mm/s rate= 0.306mm/s eseq=2 (95119 pkts)
+[bridge] [bridge] idx=4565/6320 state=1 v=   4.8mm/s rate= 0.289mm/s eseq=2 (95368 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.272 idx=4566 active=True proto=2 E= 581.22mm T=212 B=60 A 39.1
+[bridge] [bridge] idx=4577/6320 state=1 v=   4.3mm/s rate= 0.265mm/s eseq=2 (95617 pkts)
+[bridge] [bridge] idx=4589/6320 state=1 v=   4.9mm/s rate= 0.305mm/s eseq=2 (95866 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.324 idx=4590 active=True proto=2 E= 584.26mm T=210 B=60 A 39.0
+[exec] [print] waypoint 4600/6320  t=1931s
+[bridge] [bridge] idx=4601/6320 state=1 v=   5.0mm/s rate= 0.294mm/s eseq=2 (96115 pkts)
+[bridge] [bridge] idx=4613/6320 state=1 v=   4.8mm/s rate= 0.290mm/s eseq=2 (96364 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.295 idx=4615 active=True proto=2 E= 587.29mm T=208 B=60 A 39.0
+[bridge] [bridge] idx=4625/6320 state=1 v=   5.2mm/s rate= 0.339mm/s eseq=2 (96613 pkts)
+[bridge] [bridge] idx=4637/6320 state=1 v=   4.7mm/s rate= 0.281mm/s eseq=2 (96862 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.309 idx=4639 active=True proto=2 E= 590.39mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=4649/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (97111 pkts)
+[bridge] [bridge] idx=4661/6320 state=1 v=   5.5mm/s rate= 0.363mm/s eseq=2 (97360 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.301 idx=4663 active=True proto=2 E= 593.46mm T=207 B=60 A 39.1
+[bridge] [bridge] idx=4673/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (97609 pkts)
+[bridge] [bridge] idx=4685/6320 state=1 v=   4.8mm/s rate= 0.296mm/s eseq=2 (97858 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.345 idx=4687 active=True proto=2 E= 596.52mm T=212 B=60 A 39.3
+[bridge] [bridge] idx=4697/6320 state=1 v=   5.1mm/s rate= 0.345mm/s eseq=2 (98107 pkts)
+[exec] [print] waypoint 4700/6320  t=1973s
+[bridge] [bridge] idx=4709/6320 state=1 v=   4.8mm/s rate= 0.292mm/s eseq=2 (98356 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.273 idx=4711 active=True proto=2 E= 599.57mm T=211 B=60 A 39.3
+[bridge] [bridge] idx=4721/6320 state=1 v=   4.8mm/s rate= 0.282mm/s eseq=2 (98605 pkts)
+[bridge] [bridge] idx=4733/6320 state=1 v=   4.6mm/s rate= 0.297mm/s eseq=2 (98854 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.274 idx=4735 active=True proto=2 E= 602.64mm T=208 B=60 A 39.0
+[bridge] [bridge] idx=4745/6320 state=1 v=   5.0mm/s rate= 0.311mm/s eseq=2 (99103 pkts)
+[bridge] [bridge] idx=4757/6320 state=1 v=   4.6mm/s rate= 0.268mm/s eseq=2 (99352 pkts)
+[jetson] [sync] v=  5.5mm/s rate= 0.355 idx=4759 active=True proto=2 E= 605.73mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=4769/6320 state=1 v=   4.9mm/s rate= 0.315mm/s eseq=2 (99601 pkts)
+[bridge] [bridge] idx=4781/6320 state=1 v=   5.2mm/s rate= 0.333mm/s eseq=2 (99850 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.310 idx=4783 active=True proto=2 E= 608.77mm T=208 B=60 A 39.2
+[bridge] [bridge] idx=4794/6320 state=1 v=   4.4mm/s rate= 0.244mm/s eseq=2 (100099 pkts)
+[bridge] [bridge] idx=4804/6320 state=1 v=   5.1mm/s rate= 0.322mm/s eseq=2 (100348 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.356 idx=4805 active=True proto=2 E= 611.60mm T=210 B=60 A 39.1
+[bridge] [bridge] idx=4816/6320 state=1 v=   5.5mm/s rate= 0.365mm/s eseq=2 (100597 pkts)
+[bridge] [bridge] idx=4828/6320 state=1 v=   4.6mm/s rate= 0.278mm/s eseq=2 (100846 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.294 idx=4829 active=True proto=2 E= 614.65mm T=212 B=60 A 39.2
+[bridge] [bridge] idx=4840/6320 state=1 v=   5.0mm/s rate= 0.310mm/s eseq=2 (101095 pkts)
+[bridge] [bridge] idx=4852/6320 state=1 v=   5.0mm/s rate= 0.319mm/s eseq=2 (101344 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.287 idx=4853 active=True proto=2 E= 617.74mm T=207 B=60 A 38.9
+[bridge] [bridge] idx=4864/6320 state=1 v=   4.8mm/s rate= 0.292mm/s eseq=2 (101593 pkts)
+[bridge] [bridge] idx=4876/6320 state=1 v=   4.9mm/s rate= 0.304mm/s eseq=2 (101842 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.341 idx=4877 active=True proto=2 E= 620.77mm T=212 B=60 A 39.3
+[bridge] [bridge] idx=4888/6320 state=1 v=   4.8mm/s rate= 0.304mm/s eseq=2 (102091 pkts)
+[exec] [print] waypoint 4900/6320  t=2057s
+[bridge] [bridge] idx=4900/6320 state=1 v=   4.8mm/s rate= 0.294mm/s eseq=2 (102340 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.309 idx=4901 active=True proto=2 E= 623.81mm T=209 B=60 A 39.0
+[bridge] [bridge] idx=4912/6320 state=1 v=   4.8mm/s rate= 0.287mm/s eseq=2 (102589 pkts)
+[bridge] [bridge] idx=4924/6320 state=1 v=   5.0mm/s rate= 0.320mm/s eseq=2 (102838 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.280 idx=4925 active=True proto=2 E= 626.89mm T=209 B=60 A 38.9
+[bridge] [bridge] idx=4936/6320 state=1 v=   5.3mm/s rate= 0.341mm/s eseq=2 (103087 pkts)
+[bridge] [bridge] idx=4948/6320 state=1 v=   4.6mm/s rate= 0.279mm/s eseq=2 (103336 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.268 idx=4949 active=True proto=2 E= 629.98mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=4960/6320 state=1 v=   4.9mm/s rate= 0.305mm/s eseq=2 (103585 pkts)
+[bridge] [bridge] idx=4972/6320 state=1 v=   4.7mm/s rate= 0.273mm/s eseq=2 (103834 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.283 idx=4973 active=True proto=2 E= 633.05mm T=207 B=60 A 39.0
+[bridge] [bridge] idx=4984/6320 state=1 v=   4.8mm/s rate= 0.296mm/s eseq=2 (104083 pkts)
+[bridge] [bridge] idx=4996/6320 state=1 v=   4.8mm/s rate= 0.291mm/s eseq=2 (104332 pkts)
+[exec] [print] waypoint 5000/6320  t=2098s
+[jetson] [sync] v=  4.9mm/s rate= 0.309 idx=4997 active=True proto=2 E= 636.05mm T=212 B=60 A 39.1
+[bridge] [bridge] idx=5008/6320 state=1 v=   4.8mm/s rate= 0.280mm/s eseq=2 (104581 pkts)
+[bridge] [bridge] idx=5020/6320 state=1 v=   5.0mm/s rate= 0.313mm/s eseq=2 (104830 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.306 idx=5021 active=True proto=2 E= 639.11mm T=211 B=60 A 39.0
+[bridge] [bridge] idx=5032/6320 state=1 v=   5.1mm/s rate= 0.336mm/s eseq=2 (105079 pkts)
+[bridge] [bridge] idx=5044/6320 state=1 v=   5.4mm/s rate= 0.380mm/s eseq=2 (105328 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.287 idx=5045 active=True proto=2 E= 642.17mm T=208 B=60 A 39.1
+[bridge] [bridge] idx=5056/6320 state=1 v=   5.1mm/s rate= 0.326mm/s eseq=2 (105577 pkts)
+[bridge] [bridge] idx=5068/6320 state=1 v=   4.5mm/s rate= 0.274mm/s eseq=2 (105826 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.276 idx=5069 active=True proto=2 E= 645.27mm T=213 B=60 A 39.4
+[bridge] [bridge] idx=5080/6320 state=1 v=   5.2mm/s rate= 0.340mm/s eseq=2 (106075 pkts)
+[bridge] [bridge] idx=5092/6320 state=1 v=   5.2mm/s rate= 0.340mm/s eseq=2 (106324 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.332 idx=5093 active=True proto=2 E= 648.34mm T=208 B=60 A 39.1
+[exec] [print] waypoint 5100/6320  t=2140s
+[bridge] [bridge] idx=5104/6320 state=1 v=   4.9mm/s rate= 0.317mm/s eseq=2 (106573 pkts)
+[bridge] [bridge] idx=5116/6320 state=1 v=   4.9mm/s rate= 0.305mm/s eseq=2 (106822 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.296 idx=5117 active=True proto=2 E= 651.37mm T=210 B=60 A 39.2
+[bridge] [bridge] idx=5128/6320 state=1 v=   4.9mm/s rate= 0.293mm/s eseq=2 (107071 pkts)
+[bridge] [bridge] idx=5140/6320 state=1 v=   4.9mm/s rate= 0.315mm/s eseq=2 (107320 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.337 idx=5141 active=True proto=2 E= 654.43mm T=212 B=60 A 39.2
+[bridge] [bridge] idx=5152/6320 state=1 v=   4.9mm/s rate= 0.306mm/s eseq=2 (107569 pkts)
+[bridge] [bridge] idx=5164/6320 state=1 v=   4.5mm/s rate= 0.273mm/s eseq=2 (107818 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.293 idx=5165 active=True proto=2 E= 657.49mm T=207 B=60 A 39.3
+[bridge] [bridge] idx=5176/6320 state=1 v=   4.8mm/s rate= 0.290mm/s eseq=2 (108067 pkts)
+[bridge] [bridge] idx=5188/6320 state=1 v=   4.9mm/s rate= 0.306mm/s eseq=2 (108316 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.321 idx=5189 active=True proto=2 E= 660.58mm T=212 B=60 A 39.2
+[exec] [print] waypoint 5200/6320  t=2182s
+[bridge] [bridge] idx=5200/6320 state=1 v=   4.7mm/s rate= 0.279mm/s eseq=2 (108565 pkts)
+[bridge] [bridge] idx=5212/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (108814 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.292 idx=5213 active=True proto=2 E= 663.64mm T=209 B=60 A 39.3
+[bridge] [bridge] idx=5224/6320 state=1 v=   4.6mm/s rate= 0.287mm/s eseq=2 (109063 pkts)
+[bridge] [bridge] idx=5236/6320 state=1 v=   5.1mm/s rate= 0.319mm/s eseq=2 (109312 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.301 idx=5237 active=True proto=2 E= 666.70mm T=209 B=60 A 39.2
+[bridge] [bridge] idx=5248/6320 state=1 v=   4.9mm/s rate= 0.288mm/s eseq=2 (109561 pkts)
+[bridge] [bridge] idx=5260/6320 state=1 v=   4.7mm/s rate= 0.292mm/s eseq=2 (109810 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.335 idx=5261 active=True proto=2 E= 669.77mm T=213 B=60 A 39.3
+[bridge] [bridge] idx=5272/6320 state=1 v=   5.0mm/s rate= 0.311mm/s eseq=2 (110059 pkts)
+[bridge] [bridge] idx=5284/6320 state=1 v=   4.4mm/s rate= 0.242mm/s eseq=2 (110308 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.281 idx=5285 active=True proto=2 E= 672.84mm T=207 B=60 A 39.3
+[bridge] [bridge] idx=5296/6320 state=1 v=   4.6mm/s rate= 0.282mm/s eseq=2 (110557 pkts)
+[exec] [print] waypoint 5300/6320  t=2223s
+[bridge] [bridge] idx=5308/6320 state=1 v=   5.1mm/s rate= 0.316mm/s eseq=2 (110806 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.338 idx=5309 active=True proto=2 E= 675.91mm T=212 B=60 A 39.0
+[bridge] [bridge] idx=5320/6320 state=1 v=   4.7mm/s rate= 0.273mm/s eseq=2 (111055 pkts)
+[bridge] [bridge] idx=5332/6320 state=1 v=   5.2mm/s rate= 0.340mm/s eseq=2 (111304 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.326 idx=5333 active=True proto=2 E= 678.93mm T=210 B=60 A 39.4
+[bridge] [bridge] idx=5344/6320 state=1 v=   5.1mm/s rate= 0.326mm/s eseq=2 (111553 pkts)
+[bridge] [bridge] idx=5356/6320 state=1 v=   4.8mm/s rate= 0.300mm/s eseq=2 (111802 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.335 idx=5357 active=True proto=2 E= 682.03mm T=208 B=60 A 39.2
+[bridge] [bridge] idx=5368/6320 state=1 v=   5.1mm/s rate= 0.327mm/s eseq=2 (112051 pkts)
+[bridge] [bridge] idx=5381/6320 state=1 v=   5.3mm/s rate= 0.326mm/s eseq=2 (112300 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.313 idx=5381 active=True proto=2 E= 685.10mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=5393/6320 state=1 v=   5.2mm/s rate= 0.339mm/s eseq=2 (112549 pkts)
+[exec] [print] waypoint 5400/6320  t=2265s
+[bridge] [bridge] idx=5405/6320 state=1 v=   5.2mm/s rate= 0.343mm/s eseq=2 (112798 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.282 idx=5405 active=True proto=2 E= 688.16mm T=207 B=60 A 39.0
+[bridge] [bridge] idx=5417/6320 state=1 v=   4.8mm/s rate= 0.280mm/s eseq=2 (113047 pkts)
+[bridge] [bridge] idx=5429/6320 state=1 v=   5.2mm/s rate= 0.343mm/s eseq=2 (113296 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.325 idx=5429 active=True proto=2 E= 691.23mm T=211 B=60 A 39.0
+[bridge] [bridge] idx=5441/6320 state=1 v=   5.4mm/s rate= 0.357mm/s eseq=2 (113545 pkts)
+[bridge] [bridge] idx=5453/6320 state=1 v=   4.9mm/s rate= 0.303mm/s eseq=2 (113794 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.312 idx=5453 active=True proto=2 E= 694.32mm T=211 B=60 A 39.0
+[bridge] [bridge] idx=5465/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (114043 pkts)
+[bridge] [bridge] idx=5477/6320 state=1 v=   4.5mm/s rate= 0.268mm/s eseq=2 (114292 pkts)
+[jetson] [sync] v=  4.4mm/s rate= 0.268 idx=5477 active=True proto=2 E= 697.36mm T=208 B=60 A 38.7
+[bridge] [bridge] idx=5489/6320 state=1 v=   4.9mm/s rate= 0.296mm/s eseq=2 (114541 pkts)
+[exec] [print] waypoint 5500/6320  t=2307s
+[bridge] [bridge] idx=5501/6320 state=1 v=   4.9mm/s rate= 0.290mm/s eseq=2 (114790 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.278 idx=5501 active=True proto=2 E= 700.45mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=5513/6320 state=1 v=   4.9mm/s rate= 0.317mm/s eseq=2 (115039 pkts)
+[bridge] [bridge] idx=5525/6320 state=1 v=   5.3mm/s rate= 0.344mm/s eseq=2 (115288 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.320 idx=5525 active=True proto=2 E= 703.53mm T=208 B=60 A 39.1
+[bridge] [bridge] idx=5537/6320 state=1 v=   4.4mm/s rate= 0.253mm/s eseq=2 (115537 pkts)
+[bridge] [bridge] idx=5549/6320 state=1 v=   5.2mm/s rate= 0.328mm/s eseq=2 (115786 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.310 idx=5549 active=True proto=2 E= 706.57mm T=210 B=60 A 38.8
+[bridge] [bridge] idx=5561/6320 state=1 v=   4.6mm/s rate= 0.278mm/s eseq=2 (116035 pkts)
+[bridge] [bridge] idx=5573/6320 state=1 v=   4.9mm/s rate= 0.307mm/s eseq=2 (116284 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.322 idx=5573 active=True proto=2 E= 709.62mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=5585/6320 state=1 v=   5.0mm/s rate= 0.310mm/s eseq=2 (116533 pkts)
+[bridge] [bridge] idx=5597/6320 state=1 v=   5.3mm/s rate= 0.359mm/s eseq=2 (116782 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.335 idx=5597 active=True proto=2 E= 712.70mm T=207 B=60 A 38.9
+[bridge] [bridge] idx=5607/6320 state=1 v=   4.7mm/s rate= 0.287mm/s eseq=2 (117031 pkts)
+[bridge] [bridge] idx=5619/6320 state=1 v=   5.2mm/s rate= 0.332mm/s eseq=2 (117280 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.330 idx=5619 active=True proto=2 E= 715.52mm T=212 B=60 A 38.9
+[bridge] [bridge] idx=5631/6320 state=1 v=   4.9mm/s rate= 0.320mm/s eseq=2 (117529 pkts)
+[bridge] [bridge] idx=5643/6320 state=1 v=   5.1mm/s rate= 0.320mm/s eseq=2 (117778 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.292 idx=5643 active=True proto=2 E= 718.58mm T=209 B=60 A 39.2
+[bridge] [bridge] idx=5655/6320 state=1 v=   4.8mm/s rate= 0.304mm/s eseq=2 (118027 pkts)
+[bridge] [bridge] idx=5667/6320 state=1 v=   4.8mm/s rate= 0.300mm/s eseq=2 (118276 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.329 idx=5667 active=True proto=2 E= 721.63mm T=208 B=60 A 38.9
+[bridge] [bridge] idx=5679/6320 state=1 v=   5.0mm/s rate= 0.312mm/s eseq=2 (118525 pkts)
+[bridge] [bridge] idx=5691/6320 state=1 v=   5.1mm/s rate= 0.328mm/s eseq=2 (118774 pkts)
+[jetson] [sync] v=  4.4mm/s rate= 0.245 idx=5691 active=True proto=2 E= 724.72mm T=213 B=60 A 39.0
+[exec] [print] waypoint 5700/6320  t=2391s
+[bridge] [bridge] idx=5703/6320 state=1 v=   4.8mm/s rate= 0.293mm/s eseq=2 (119023 pkts)
+[bridge] [bridge] idx=5715/6320 state=1 v=   5.4mm/s rate= 0.353mm/s eseq=2 (119272 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.265 idx=5715 active=True proto=2 E= 727.79mm T=207 B=60 A 39.2
+[bridge] [bridge] idx=5727/6320 state=1 v=   5.0mm/s rate= 0.303mm/s eseq=2 (119521 pkts)
+[bridge] [bridge] idx=5739/6320 state=1 v=   5.1mm/s rate= 0.323mm/s eseq=2 (119770 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.319 idx=5739 active=True proto=2 E= 730.82mm T=211 B=60 A 39.2
+[bridge] [bridge] idx=5751/6320 state=1 v=   4.6mm/s rate= 0.299mm/s eseq=2 (120019 pkts)
+[bridge] [bridge] idx=5763/6320 state=1 v=   4.8mm/s rate= 0.288mm/s eseq=2 (120268 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.275 idx=5763 active=True proto=2 E= 733.88mm T=211 B=60 A 39.0
+[bridge] [bridge] idx=5775/6320 state=1 v=   5.0mm/s rate= 0.325mm/s eseq=2 (120517 pkts)
+[bridge] [bridge] idx=5787/6320 state=1 v=   4.6mm/s rate= 0.281mm/s eseq=2 (120766 pkts)
+[jetson] [sync] v=  5.3mm/s rate= 0.357 idx=5787 active=True proto=2 E= 736.92mm T=208 B=60 A 39.2
+[exec] [print] waypoint 5800/6320  t=2432s
+[bridge] [bridge] idx=5799/6320 state=1 v=   5.0mm/s rate= 0.322mm/s eseq=2 (121015 pkts)
+[bridge] [bridge] idx=5811/6320 state=1 v=   4.7mm/s rate= 0.286mm/s eseq=2 (121264 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.308 idx=5811 active=True proto=2 E= 740.01mm T=213 B=60 A 39.1
+[bridge] [bridge] idx=5823/6320 state=1 v=   4.4mm/s rate= 0.239mm/s eseq=2 (121513 pkts)
+[bridge] [bridge] idx=5835/6320 state=1 v=   4.9mm/s rate= 0.294mm/s eseq=2 (121762 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.297 idx=5835 active=True proto=2 E= 743.06mm T=208 B=60 A 39.1
+[bridge] [bridge] idx=5847/6320 state=1 v=   5.4mm/s rate= 0.372mm/s eseq=2 (122012 pkts)
+[bridge] [bridge] idx=5859/6320 state=1 v=   5.0mm/s rate= 0.315mm/s eseq=2 (122261 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.315 idx=5859 active=True proto=2 E= 746.12mm T=210 B=60 A 39.3
+[bridge] [bridge] idx=5871/6320 state=1 v=   4.8mm/s rate= 0.285mm/s eseq=2 (122510 pkts)
+[bridge] [bridge] idx=5883/6320 state=1 v=   5.2mm/s rate= 0.344mm/s eseq=2 (122759 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.344 idx=5883 active=True proto=2 E= 749.18mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=5895/6320 state=1 v=   4.6mm/s rate= 0.275mm/s eseq=2 (123008 pkts)
+[exec] [print] waypoint 5900/6320  t=2474s
+[bridge] [bridge] idx=5907/6320 state=1 v=   4.5mm/s rate= 0.260mm/s eseq=2 (123257 pkts)
+[jetson] [sync] v=  4.5mm/s rate= 0.260 idx=5907 active=True proto=2 E= 752.26mm T=207 B=60 A 39.1
+[bridge] [bridge] idx=5919/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (123506 pkts)
+[bridge] [bridge] idx=5931/6320 state=1 v=   5.2mm/s rate= 0.321mm/s eseq=2 (123755 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.316 idx=5931 active=True proto=2 E= 755.33mm T=212 B=60 A 38.9
+[bridge] [bridge] idx=5944/6320 state=1 v=   4.8mm/s rate= 0.299mm/s eseq=2 (124004 pkts)
+[bridge] [bridge] idx=5956/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (124253 pkts)
+[jetson] [sync] v=  4.7mm/s rate= 0.274 idx=5955 active=True proto=2 E= 758.37mm T=210 B=60 A 39.1
+[bridge] [bridge] idx=5968/6320 state=1 v=   5.9mm/s rate= 0.417mm/s eseq=2 (124502 pkts)
+[bridge] [bridge] idx=5980/6320 state=1 v=   5.0mm/s rate= 0.316mm/s eseq=2 (124751 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.316 idx=5979 active=True proto=2 E= 761.40mm T=209 B=60 A 39.1
+[bridge] [bridge] idx=5992/6320 state=1 v=   5.2mm/s rate= 0.345mm/s eseq=2 (125000 pkts)
+[exec] [print] waypoint 6000/6320  t=2516s
+[bridge] [bridge] idx=6004/6320 state=1 v=   4.7mm/s rate= 0.294mm/s eseq=2 (125249 pkts)
+[jetson] [sync] v=  4.6mm/s rate= 0.276 idx=6004 active=True proto=2 E= 764.48mm T=213 B=60 A 39.0
+[bridge] [bridge] idx=6016/6320 state=1 v=   4.8mm/s rate= 0.296mm/s eseq=2 (125498 pkts)
+[bridge] [bridge] idx=6028/6320 state=1 v=   4.7mm/s rate= 0.284mm/s eseq=2 (125747 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.305 idx=6028 active=True proto=2 E= 767.56mm T=207 B=60 A 39.2
+[bridge] [bridge] idx=6040/6320 state=1 v=   4.9mm/s rate= 0.304mm/s eseq=2 (125996 pkts)
+[bridge] [bridge] idx=6052/6320 state=1 v=   5.3mm/s rate= 0.343mm/s eseq=2 (126245 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.310 idx=6052 active=True proto=2 E= 770.61mm T=212 B=60 A 39.2
+[bridge] [bridge] idx=6064/6320 state=1 v=   4.6mm/s rate= 0.272mm/s eseq=2 (126494 pkts)
+[bridge] [bridge] idx=6076/6320 state=1 v=   5.1mm/s rate= 0.330mm/s eseq=2 (126743 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.305 idx=6076 active=True proto=2 E= 773.66mm T=210 B=60 A 39.1
+[bridge] [bridge] idx=6088/6320 state=1 v=   4.9mm/s rate= 0.293mm/s eseq=2 (126992 pkts)
+[exec] [print] waypoint 6100/6320  t=2557s
+[bridge] [bridge] idx=6100/6320 state=1 v=   4.6mm/s rate= 0.285mm/s eseq=2 (127241 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.302 idx=6100 active=True proto=2 E= 776.72mm T=208 B=60 A 38.7
+[bridge] [bridge] idx=6112/6320 state=1 v=   4.9mm/s rate= 0.294mm/s eseq=2 (127490 pkts)
+[bridge] [bridge] idx=6124/6320 state=1 v=   5.2mm/s rate= 0.348mm/s eseq=2 (127739 pkts)
+[jetson] [sync] v=  5.2mm/s rate= 0.337 idx=6124 active=True proto=2 E= 779.80mm T=213 B=60 A 38.9
+[bridge] [bridge] idx=6136/6320 state=1 v=   5.0mm/s rate= 0.312mm/s eseq=2 (127988 pkts)
+[bridge] [bridge] idx=6148/6320 state=1 v=   4.7mm/s rate= 0.280mm/s eseq=2 (128237 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.323 idx=6148 active=True proto=2 E= 782.88mm T=208 B=60 A 38.5
+[bridge] [bridge] idx=6160/6320 state=1 v=   4.7mm/s rate= 0.294mm/s eseq=2 (128486 pkts)
+[bridge] [bridge] idx=6172/6320 state=1 v=   4.9mm/s rate= 0.302mm/s eseq=2 (128735 pkts)
+[jetson] [sync] v=  4.9mm/s rate= 0.301 idx=6172 active=True proto=2 E= 785.90mm T=210 B=60 A 38.7
+[bridge] [bridge] idx=6184/6320 state=1 v=   4.6mm/s rate= 0.281mm/s eseq=2 (128984 pkts)
+[bridge] [bridge] idx=6196/6320 state=1 v=   4.9mm/s rate= 0.316mm/s eseq=2 (129233 pkts)
+[exec] [print] waypoint 6200/6320  t=2599s
+[jetson] [sync] v=  4.9mm/s rate= 0.300 idx=6196 active=True proto=2 E= 788.96mm T=212 B=60 A 38.9
+[bridge] [bridge] idx=6208/6320 state=1 v=   4.8mm/s rate= 0.285mm/s eseq=2 (129482 pkts)
+[bridge] [bridge] idx=6220/6320 state=1 v=   5.3mm/s rate= 0.356mm/s eseq=2 (129731 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.331 idx=6220 active=True proto=2 E= 792.04mm T=207 B=60 A 38.5
+[bridge] [bridge] idx=6232/6320 state=1 v=   4.8mm/s rate= 0.302mm/s eseq=2 (129980 pkts)
+[bridge] [bridge] idx=6244/6320 state=1 v=   5.3mm/s rate= 0.345mm/s eseq=2 (130229 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.306 idx=6244 active=True proto=2 E= 795.11mm T=213 B=60 A 38.6
+[bridge] [bridge] idx=6256/6320 state=1 v=   5.0mm/s rate= 0.315mm/s eseq=2 (130478 pkts)
+[bridge] [bridge] idx=6268/6320 state=1 v=   4.8mm/s rate= 0.292mm/s eseq=2 (130727 pkts)
+[jetson] [sync] v=  5.1mm/s rate= 0.326 idx=6268 active=True proto=2 E= 798.14mm T=209 B=60 A 38.3
+[bridge] [bridge] idx=6280/6320 state=1 v=   4.5mm/s rate= 0.266mm/s eseq=2 (130976 pkts)
+[bridge] [bridge] idx=6292/6320 state=1 v=   4.8mm/s rate= 0.297mm/s eseq=2 (131225 pkts)
+[jetson] [sync] v=  4.8mm/s rate= 0.285 idx=6292 active=True proto=2 E= 801.16mm T=210 B=60 A 38.4
+[exec] [print] waypoint 6300/6320  t=2641s
+[bridge] [bridge] idx=6304/6320 state=1 v=   5.1mm/s rate= 0.317mm/s eseq=2 (131474 pkts)
+[bridge] [bridge] idx=6316/6320 state=1 v=   4.7mm/s rate= 0.274mm/s eseq=2 (131723 pkts)
+[jetson] [sync] v=  5.0mm/s rate= 0.312 idx=6316 active=True proto=2 E= 804.19mm T=213 B=60 A 38.5
+[exec] [print] print path complete in 2650s (physical catch-up 0s) — retracting
+[orch] print done — stopping extrusion
+[exec]   fed feature   0 (retract) -> id 24058
+[bridge] [bridge] stopped (sent proto2 stop). total E~805.6mm retracts=2 primes=1
+[bridge] Traceback (most recent call last):
+[bridge]   File "/home/edge_ur_fdm_cnc/isaac_ws/tools/extrusion_bridge.py", line 638, in <module>
+[bridge]     main()
+[bridge]   File "/home/edge_ur_fdm_cnc/isaac_ws/tools/extrusion_bridge.py", line 633, in main
+[bridge]     return run_plan_live(args)
+[bridge]            ^^^^^^^^^^^^^^^^^^^
+[bridge]   File "/home/edge_ur_fdm_cnc/isaac_ws/tools/extrusion_bridge.py", line 427, in run_plan_live
+[bridge]     time.sleep(max(0.0, 1.0 / args.hz - (time.time() - t0)))
+[bridge] KeyboardInterrupt
+[jetson] [sync]   T  209.1/210   B  60.1/60 A 38.3
+[exec]   ARRIVED feature   0  (||Δ||<2.00mm, v<0.0015)
+[exec] [print] DONE — nozzle retracted above the end point
+[orch] executor exited rc=0
+[orch] post-stop nozzle lift +50 mm
+[jetson] [sync]   T  207.1/210   B  60.2/60 A 38.3
+[jetson] [sync]   T  208.4/210   B  59.8/60 A 38.1
+[jetson] [sync]   T  210.8/210   B  59.8/60 A 38.3
+[orch] lift: [lift] done (rc=0)
+[jetson] [sync] stopping (real_print.py finished)
+[orch] head stopped and cooled: {'ok': True, 'state': 'ready', 'mode': 'serve', 'cmd_proto': 1, 'nozzle': 212.5, 'nozzle_target': 210.0, 'bed': 59.7, 'bed_target': 60.0, 'ambient': 38.0, 'at_temperature': True, 'printing': False, 'active': False, 'loaded': False, 'primed': True, 'fan_on': True, 'e_total': 804.538, 'e_net': 808.688, 'e_gross': 818.291, 'idx': 6320, 'eseq': 3, 'proto': 2, 'v_mm_s': 0.0, 'rate': 0.0, 'uptime_s': 4334.3, 'temps_age_s': 0.0, 'packet_age_s': 15.56, 'pinda_zmin': 'open', 'line': '[sync]   T  212.5/210   B  59.7/60 A 38.0'}
