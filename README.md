@@ -77,12 +77,3 @@ files are the MATLAB slicer outputs that were decimated to the 60,000 waypoints 
 - method4_25mm_support80_1layer_zup36_RAWnormals_retry: raw normals, one-layer 80 mm disc, 51.01 m, reached in 10,677 s.
 - ur5e_sim_urscript (method3_support80_1layer_zup40_RAWnormals): central-path slicer, 50.27 m, reached in 10,695 s, extrusion flag false in the watch.
 No filament, temperature or probe data were logged for these runs; the parts were assessed visually.
-
-## upgraded_head_cylinders/ (added later): the two surviving parts, printed with the upgraded head
-
-Plans and real_print logs of the 30 mm and 40 mm single-wall vase cylinders (helix, pitch 0.3 mm, 0.5 x 0.3 mm bead,
-210/60 C) printed on the rebuilt cell with the MK3S head: the same arm, executor and gates as the campaign, a different
-head and bed. They are reported in the paper only as an as-printed dimension on the upgraded head, not as campaign
-parts. `cylinder_30mm_vase_purge_plan.json` + `real_print_cylinder30_20260906.log` (6,322 waypoints, rc 0, 609.7 mm net
-filament); `cylinder_40mm_vase_purge_plan.json` + `real_print_cylinder40_20260907_first.log` (6,320 waypoints, 804.2 mm)
-and `_second.log` (6,319 waypoints, 806 mm).
