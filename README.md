@@ -73,7 +73,7 @@ status, elapsed seconds, final joint delta, extrusion flag) and `*_sim.json.gz` 
 targets, joint positions, nozzle axes and residuals). `curved_tube_25mm.stl` is the model; the `*.gcode.gz`
 files are the MATLAB slicer outputs that were decimated to the 60,000 waypoints (support disc included).
 - method4_25mm_support60_lh02_zup24_tilt45: voxel-skeleton slicer, nozzle tilt capped at 45 deg, 62.07 m, reached in 12,841 s.
-- method4_25mm_support60_lh035_zup285_RAWnormals: raw layer normals (nozzle up to 88 deg from vertical), 62.07 m, reached in 12,869 s.
+- method4_25mm_support60_lh035_zup285_RAWnormals: raw layer normals (nozzle up to 97 deg from straight down, a few waypoints past horizontal), 62.07 m, reached in 12,869 s.
 - method4_25mm_support80_1layer_zup36_RAWnormals_retry: raw normals, one-layer 80 mm disc, 51.01 m, reached in 10,677 s.
 - ur5e_sim_urscript (method3_support80_1layer_zup40_RAWnormals): central-path slicer, 50.27 m, reached in 10,695 s, extrusion flag false in the watch.
 No filament, temperature or probe data were logged for these runs; the parts were assessed visually.
